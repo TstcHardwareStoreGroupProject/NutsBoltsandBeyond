@@ -1,0 +1,10 @@
+D:\Documents\TSTC\Comp Software Proj PlanDesig (INEW-2330-10Z1)\NutsBoltsandBeyond\NutsBoltsAndBeyond\NutsBoltsAndBeyond\bin\Debug\NutsBoltsAndBeyond.exe.config
+D:\Documents\TSTC\Comp Software Proj PlanDesig (INEW-2330-10Z1)\NutsBoltsandBeyond\NutsBoltsAndBeyond\NutsBoltsAndBeyond\bin\Debug\NutsBoltsAndBeyond.exe
+D:\Documents\TSTC\Comp Software Proj PlanDesig (INEW-2330-10Z1)\NutsBoltsandBeyond\NutsBoltsAndBeyond\NutsBoltsAndBeyond\bin\Debug\NutsBoltsAndBeyond.pdb
+D:\Documents\TSTC\Comp Software Proj PlanDesig (INEW-2330-10Z1)\NutsBoltsandBeyond\NutsBoltsAndBeyond\NutsBoltsAndBeyond\obj\Debug\NutsBoltsAndBeyond.csprojAssemblyReference.cache
+D:\Documents\TSTC\Comp Software Proj PlanDesig (INEW-2330-10Z1)\NutsBoltsandBeyond\NutsBoltsAndBeyond\NutsBoltsAndBeyond\obj\Debug\NutsBoltsAndBeyond.frmMain.resources
+D:\Documents\TSTC\Comp Software Proj PlanDesig (INEW-2330-10Z1)\NutsBoltsandBeyond\NutsBoltsAndBeyond\NutsBoltsAndBeyond\obj\Debug\NutsBoltsAndBeyond.Properties.Resources.resources
+D:\Documents\TSTC\Comp Software Proj PlanDesig (INEW-2330-10Z1)\NutsBoltsandBeyond\NutsBoltsAndBeyond\NutsBoltsAndBeyond\obj\Debug\NutsBoltsAndBeyond.csproj.GenerateResource.cache
+D:\Documents\TSTC\Comp Software Proj PlanDesig (INEW-2330-10Z1)\NutsBoltsandBeyond\NutsBoltsAndBeyond\NutsBoltsAndBeyond\obj\Debug\NutsBoltsAndBeyond.csproj.CoreCompileInputs.cache
+D:\Documents\TSTC\Comp Software Proj PlanDesig (INEW-2330-10Z1)\NutsBoltsandBeyond\NutsBoltsAndBeyond\NutsBoltsAndBeyond\obj\Debug\NutsBoltsAndBeyond.exe
+D:\Documents\TSTC\Comp Software Proj PlanDesig (INEW-2330-10Z1)\NutsBoltsandBeyond\NutsBoltsAndBeyond\NutsBoltsAndBeyond\obj\Debug\NutsBoltsAndBeyond.pdb
