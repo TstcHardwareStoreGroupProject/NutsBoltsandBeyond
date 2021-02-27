@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NutsBoltsandBeyondHardwareStore", "NutsBoltsandBeyondHardwareStore.csproj", "{08DDDC54-ED7E-475D-BE06-1BB409FB8162}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{08DDDC54-ED7E-475D-BE06-1BB409FB8162}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08DDDC54-ED7E-475D-BE06-1BB409FB8162}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08DDDC54-ED7E-475D-BE06-1BB409FB8162}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08DDDC54-ED7E-475D-BE06-1BB409FB8162}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C999FFC4-6EEA-406C-AFFA-7CF08CA23D7F}
+	EndGlobalSection
+EndGlobal
