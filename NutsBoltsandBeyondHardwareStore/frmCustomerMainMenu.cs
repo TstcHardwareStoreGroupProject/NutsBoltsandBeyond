@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace NutsBoltsandBeyondHardwareStore
 {
-    public partial class frmEmployeeOrderForm : Form
+    public partial class frmCustomerMainMenu : Form
     {
-        public frmEmployeeOrderForm()
+        public frmCustomerMainMenu()
         {
             InitializeComponent();
-        }
-
-        private void frmEmployeeOrderForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

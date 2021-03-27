@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,7 +41,9 @@
             this.lblCreateAccount = new System.Windows.Forms.Label();
             this.lblPasswordReset = new System.Windows.Forms.Label();
             this.lblHeader = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -78,7 +81,7 @@
             // 
             // tbxUserName
             // 
-            this.tbxUserName.Location = new System.Drawing.Point(191, 124);
+            this.tbxUserName.Location = new System.Drawing.Point(193, 327);
             this.tbxUserName.Name = "tbxUserName";
             this.tbxUserName.Size = new System.Drawing.Size(100, 20);
             this.tbxUserName.TabIndex = 1;
@@ -86,7 +89,7 @@
             // 
             // tbxPassword
             // 
-            this.tbxPassword.Location = new System.Drawing.Point(191, 150);
+            this.tbxPassword.Location = new System.Drawing.Point(193, 353);
             this.tbxPassword.Name = "tbxPassword";
             this.tbxPassword.Size = new System.Drawing.Size(100, 20);
             this.tbxPassword.TabIndex = 2;
@@ -94,7 +97,7 @@
             // 
             // btnLogIn
             // 
-            this.btnLogIn.Location = new System.Drawing.Point(204, 191);
+            this.btnLogIn.Location = new System.Drawing.Point(202, 379);
             this.btnLogIn.Name = "btnLogIn";
             this.btnLogIn.Size = new System.Drawing.Size(75, 23);
             this.btnLogIn.TabIndex = 3;
@@ -104,7 +107,7 @@
             // 
             // btnSignUp
             // 
-            this.btnSignUp.Location = new System.Drawing.Point(70, 268);
+            this.btnSignUp.Location = new System.Drawing.Point(73, 445);
             this.btnSignUp.Name = "btnSignUp";
             this.btnSignUp.Size = new System.Drawing.Size(111, 23);
             this.btnSignUp.TabIndex = 4;
@@ -114,7 +117,7 @@
             // 
             // btnResetPassword
             // 
-            this.btnResetPassword.Location = new System.Drawing.Point(295, 268);
+            this.btnResetPassword.Location = new System.Drawing.Point(298, 445);
             this.btnResetPassword.Name = "btnResetPassword";
             this.btnResetPassword.Size = new System.Drawing.Size(111, 23);
             this.btnResetPassword.TabIndex = 5;
@@ -125,7 +128,7 @@
             // lblCreateAccount
             // 
             this.lblCreateAccount.AutoSize = true;
-            this.lblCreateAccount.Location = new System.Drawing.Point(67, 252);
+            this.lblCreateAccount.Location = new System.Drawing.Point(70, 429);
             this.lblCreateAccount.Name = "lblCreateAccount";
             this.lblCreateAccount.Size = new System.Drawing.Size(122, 13);
             this.lblCreateAccount.TabIndex = 6;
@@ -134,7 +137,7 @@
             // lblPasswordReset
             // 
             this.lblPasswordReset.AutoSize = true;
-            this.lblPasswordReset.Location = new System.Drawing.Point(292, 252);
+            this.lblPasswordReset.Location = new System.Drawing.Point(295, 429);
             this.lblPasswordReset.Name = "lblPasswordReset";
             this.lblPasswordReset.Size = new System.Drawing.Size(92, 13);
             this.lblPasswordReset.TabIndex = 7;
@@ -150,12 +153,23 @@
             this.lblHeader.TabIndex = 8;
             this.lblHeader.Text = "Nuts Bolts and Beyond Hardware Store";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(147, 115);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(189, 189);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(494, 393);
+            this.ClientSize = new System.Drawing.Size(494, 509);
             this.ControlBox = false;
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.lblPasswordReset);
             this.Controls.Add(this.lblCreateAccount);
@@ -171,6 +185,7 @@
             this.Text = "Login Screen";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,6 +205,7 @@
         private System.Windows.Forms.Label lblCreateAccount;
         private System.Windows.Forms.Label lblPasswordReset;
         private System.Windows.Forms.Label lblHeader;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

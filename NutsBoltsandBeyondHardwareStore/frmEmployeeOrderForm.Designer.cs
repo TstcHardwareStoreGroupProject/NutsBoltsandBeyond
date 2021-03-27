@@ -37,8 +37,8 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.gbxOrder = new System.Windows.Forms.GroupBox();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.lbxOrderList = new System.Windows.Forms.ListBox();
             this.btnOrder = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
@@ -129,15 +129,6 @@
             this.gbxOrder.TabStop = false;
             this.gbxOrder.Text = "Order:";
             // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(25, 161);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(114, 23);
-            this.btnAdd.TabIndex = 10;
-            this.btnAdd.Text = "Add to Order";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            // 
             // btnRemove
             // 
             this.btnRemove.Location = new System.Drawing.Point(167, 161);
@@ -146,6 +137,15 @@
             this.btnRemove.TabIndex = 11;
             this.btnRemove.Text = "Remove from Order";
             this.btnRemove.UseVisualStyleBackColor = true;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(25, 161);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(114, 23);
+            this.btnAdd.TabIndex = 10;
+            this.btnAdd.Text = "Add to Order";
+            this.btnAdd.UseVisualStyleBackColor = true;
             // 
             // lbxOrderList
             // 
@@ -184,7 +184,8 @@
             this.Controls.Add(this.lbxOrderList);
             this.Controls.Add(this.gbxOrder);
             this.Name = "frmEmployeeOrderForm";
-            this.Text = "Employee Product Order Form";
+            this.Text = "    ";
+            this.Load += new System.EventHandler(this.frmEmployeeOrderForm_Load);
             this.gbxOrder.ResumeLayout(false);
             this.gbxOrder.PerformLayout();
             this.ResumeLayout(false);
