@@ -35,24 +35,24 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lbxCustomerOrder = new System.Windows.Forms.ListBox();
             this.gbxPayment = new System.Windows.Forms.GroupBox();
-            this.lblFirstName = new System.Windows.Forms.Label();
-            this.lblLastName = new System.Windows.Forms.Label();
-            this.lblAddress = new System.Windows.Forms.Label();
-            this.lblState = new System.Windows.Forms.Label();
-            this.lblCity = new System.Windows.Forms.Label();
-            this.lblZip = new System.Windows.Forms.Label();
-            this.lblCreditCardNo = new System.Windows.Forms.Label();
-            this.lblExpirationDate = new System.Windows.Forms.Label();
-            this.lblCCV = new System.Windows.Forms.Label();
-            this.tbxFirstName = new System.Windows.Forms.TextBox();
-            this.tbxLastName = new System.Windows.Forms.TextBox();
-            this.tbxAddress = new System.Windows.Forms.TextBox();
-            this.tbxCity = new System.Windows.Forms.TextBox();
-            this.tbxState = new System.Windows.Forms.TextBox();
-            this.tbxZip = new System.Windows.Forms.TextBox();
-            this.tbxCreditCardNo = new System.Windows.Forms.TextBox();
-            this.tbxExpirationDate = new System.Windows.Forms.TextBox();
             this.tbxCCV = new System.Windows.Forms.TextBox();
+            this.tbxExpirationDate = new System.Windows.Forms.TextBox();
+            this.tbxCreditCardNo = new System.Windows.Forms.TextBox();
+            this.tbxZip = new System.Windows.Forms.TextBox();
+            this.tbxState = new System.Windows.Forms.TextBox();
+            this.tbxCity = new System.Windows.Forms.TextBox();
+            this.tbxAddress = new System.Windows.Forms.TextBox();
+            this.tbxLastName = new System.Windows.Forms.TextBox();
+            this.tbxFirstName = new System.Windows.Forms.TextBox();
+            this.lblCCV = new System.Windows.Forms.Label();
+            this.lblExpirationDate = new System.Windows.Forms.Label();
+            this.lblCreditCardNo = new System.Windows.Forms.Label();
+            this.lblZip = new System.Windows.Forms.Label();
+            this.lblCity = new System.Windows.Forms.Label();
+            this.lblState = new System.Windows.Forms.Label();
+            this.lblAddress = new System.Windows.Forms.Label();
+            this.lblLastName = new System.Windows.Forms.Label();
+            this.lblFirstName = new System.Windows.Forms.Label();
             this.lblOrderTotal = new System.Windows.Forms.Label();
             this.btnCheckOut = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
@@ -62,7 +62,7 @@
             // lblCart
             // 
             this.lblCart.AutoSize = true;
-            this.lblCart.Location = new System.Drawing.Point(12, 58);
+            this.lblCart.Location = new System.Drawing.Point(18, 45);
             this.lblCart.Name = "lblCart";
             this.lblCart.Size = new System.Drawing.Size(61, 13);
             this.lblCart.TabIndex = 0;
@@ -101,7 +101,7 @@
             // lbxCustomerOrder
             // 
             this.lbxCustomerOrder.FormattingEnabled = true;
-            this.lbxCustomerOrder.Location = new System.Drawing.Point(15, 74);
+            this.lbxCustomerOrder.Location = new System.Drawing.Point(21, 61);
             this.lbxCustomerOrder.Name = "lbxCustomerOrder";
             this.lbxCustomerOrder.Size = new System.Drawing.Size(267, 355);
             this.lbxCustomerOrder.TabIndex = 2;
@@ -133,77 +133,68 @@
             this.gbxPayment.TabStop = false;
             this.gbxPayment.Text = "Payment";
             // 
-            // lblFirstName
+            // tbxCCV
             // 
-            this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Location = new System.Drawing.Point(72, 43);
-            this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(60, 13);
-            this.lblFirstName.TabIndex = 0;
-            this.lblFirstName.Text = "First Name:";
+            this.tbxCCV.Location = new System.Drawing.Point(370, 157);
+            this.tbxCCV.Name = "tbxCCV";
+            this.tbxCCV.Size = new System.Drawing.Size(100, 20);
+            this.tbxCCV.TabIndex = 17;
             // 
-            // lblLastName
+            // tbxExpirationDate
             // 
-            this.lblLastName.AutoSize = true;
-            this.lblLastName.Location = new System.Drawing.Point(71, 80);
-            this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(61, 13);
-            this.lblLastName.TabIndex = 1;
-            this.lblLastName.Text = "Last Name:";
+            this.tbxExpirationDate.Location = new System.Drawing.Point(370, 121);
+            this.tbxExpirationDate.Name = "tbxExpirationDate";
+            this.tbxExpirationDate.Size = new System.Drawing.Size(100, 20);
+            this.tbxExpirationDate.TabIndex = 16;
             // 
-            // lblAddress
+            // tbxCreditCardNo
             // 
-            this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(84, 115);
-            this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(48, 13);
-            this.lblAddress.TabIndex = 2;
-            this.lblAddress.Text = "Address:";
+            this.tbxCreditCardNo.Location = new System.Drawing.Point(370, 82);
+            this.tbxCreditCardNo.Name = "tbxCreditCardNo";
+            this.tbxCreditCardNo.Size = new System.Drawing.Size(100, 20);
+            this.tbxCreditCardNo.TabIndex = 15;
             // 
-            // lblState
+            // tbxZip
             // 
-            this.lblState.AutoSize = true;
-            this.lblState.Location = new System.Drawing.Point(97, 182);
-            this.lblState.Name = "lblState";
-            this.lblState.Size = new System.Drawing.Size(35, 13);
-            this.lblState.TabIndex = 3;
-            this.lblState.Text = "State:";
+            this.tbxZip.Location = new System.Drawing.Point(370, 44);
+            this.tbxZip.Name = "tbxZip";
+            this.tbxZip.Size = new System.Drawing.Size(100, 20);
+            this.tbxZip.TabIndex = 14;
             // 
-            // lblCity
+            // tbxState
             // 
-            this.lblCity.AutoSize = true;
-            this.lblCity.Location = new System.Drawing.Point(105, 147);
-            this.lblCity.Name = "lblCity";
-            this.lblCity.Size = new System.Drawing.Size(27, 13);
-            this.lblCity.TabIndex = 4;
-            this.lblCity.Text = "City:";
+            this.tbxState.Location = new System.Drawing.Point(138, 179);
+            this.tbxState.Name = "tbxState";
+            this.tbxState.Size = new System.Drawing.Size(100, 20);
+            this.tbxState.TabIndex = 13;
             // 
-            // lblZip
+            // tbxCity
             // 
-            this.lblZip.AutoSize = true;
-            this.lblZip.Location = new System.Drawing.Point(311, 47);
-            this.lblZip.Name = "lblZip";
-            this.lblZip.Size = new System.Drawing.Size(53, 13);
-            this.lblZip.TabIndex = 5;
-            this.lblZip.Text = "Zip Code:";
+            this.tbxCity.Location = new System.Drawing.Point(138, 144);
+            this.tbxCity.Name = "tbxCity";
+            this.tbxCity.Size = new System.Drawing.Size(100, 20);
+            this.tbxCity.TabIndex = 12;
             // 
-            // lblCreditCardNo
+            // tbxAddress
             // 
-            this.lblCreditCardNo.AutoSize = true;
-            this.lblCreditCardNo.Location = new System.Drawing.Point(262, 85);
-            this.lblCreditCardNo.Name = "lblCreditCardNo";
-            this.lblCreditCardNo.Size = new System.Drawing.Size(102, 13);
-            this.lblCreditCardNo.TabIndex = 6;
-            this.lblCreditCardNo.Text = "Credit Card Number:\r\n";
+            this.tbxAddress.Location = new System.Drawing.Point(138, 112);
+            this.tbxAddress.Name = "tbxAddress";
+            this.tbxAddress.Size = new System.Drawing.Size(100, 20);
+            this.tbxAddress.TabIndex = 11;
             // 
-            // lblExpirationDate
+            // tbxLastName
             // 
-            this.lblExpirationDate.AutoSize = true;
-            this.lblExpirationDate.Location = new System.Drawing.Point(282, 124);
-            this.lblExpirationDate.Name = "lblExpirationDate";
-            this.lblExpirationDate.Size = new System.Drawing.Size(82, 13);
-            this.lblExpirationDate.TabIndex = 7;
-            this.lblExpirationDate.Text = "Expiration Date:";
+            this.tbxLastName.Location = new System.Drawing.Point(138, 77);
+            this.tbxLastName.Name = "tbxLastName";
+            this.tbxLastName.Size = new System.Drawing.Size(100, 20);
+            this.tbxLastName.TabIndex = 10;
+            // 
+            // tbxFirstName
+            // 
+            this.tbxFirstName.Location = new System.Drawing.Point(138, 40);
+            this.tbxFirstName.Name = "tbxFirstName";
+            this.tbxFirstName.Size = new System.Drawing.Size(100, 20);
+            this.tbxFirstName.TabIndex = 9;
             // 
             // lblCCV
             // 
@@ -214,68 +205,77 @@
             this.lblCCV.TabIndex = 8;
             this.lblCCV.Text = "CCV No:";
             // 
-            // tbxFirstName
+            // lblExpirationDate
             // 
-            this.tbxFirstName.Location = new System.Drawing.Point(138, 40);
-            this.tbxFirstName.Name = "tbxFirstName";
-            this.tbxFirstName.Size = new System.Drawing.Size(100, 20);
-            this.tbxFirstName.TabIndex = 9;
+            this.lblExpirationDate.AutoSize = true;
+            this.lblExpirationDate.Location = new System.Drawing.Point(282, 124);
+            this.lblExpirationDate.Name = "lblExpirationDate";
+            this.lblExpirationDate.Size = new System.Drawing.Size(82, 13);
+            this.lblExpirationDate.TabIndex = 7;
+            this.lblExpirationDate.Text = "Expiration Date:";
             // 
-            // tbxLastName
+            // lblCreditCardNo
             // 
-            this.tbxLastName.Location = new System.Drawing.Point(138, 77);
-            this.tbxLastName.Name = "tbxLastName";
-            this.tbxLastName.Size = new System.Drawing.Size(100, 20);
-            this.tbxLastName.TabIndex = 10;
+            this.lblCreditCardNo.AutoSize = true;
+            this.lblCreditCardNo.Location = new System.Drawing.Point(262, 85);
+            this.lblCreditCardNo.Name = "lblCreditCardNo";
+            this.lblCreditCardNo.Size = new System.Drawing.Size(102, 13);
+            this.lblCreditCardNo.TabIndex = 6;
+            this.lblCreditCardNo.Text = "Credit Card Number:\r\n";
             // 
-            // tbxAddress
+            // lblZip
             // 
-            this.tbxAddress.Location = new System.Drawing.Point(138, 112);
-            this.tbxAddress.Name = "tbxAddress";
-            this.tbxAddress.Size = new System.Drawing.Size(100, 20);
-            this.tbxAddress.TabIndex = 11;
+            this.lblZip.AutoSize = true;
+            this.lblZip.Location = new System.Drawing.Point(311, 47);
+            this.lblZip.Name = "lblZip";
+            this.lblZip.Size = new System.Drawing.Size(53, 13);
+            this.lblZip.TabIndex = 5;
+            this.lblZip.Text = "Zip Code:";
             // 
-            // tbxCity
+            // lblCity
             // 
-            this.tbxCity.Location = new System.Drawing.Point(138, 144);
-            this.tbxCity.Name = "tbxCity";
-            this.tbxCity.Size = new System.Drawing.Size(100, 20);
-            this.tbxCity.TabIndex = 12;
+            this.lblCity.AutoSize = true;
+            this.lblCity.Location = new System.Drawing.Point(105, 147);
+            this.lblCity.Name = "lblCity";
+            this.lblCity.Size = new System.Drawing.Size(27, 13);
+            this.lblCity.TabIndex = 4;
+            this.lblCity.Text = "City:";
             // 
-            // tbxState
+            // lblState
             // 
-            this.tbxState.Location = new System.Drawing.Point(138, 179);
-            this.tbxState.Name = "tbxState";
-            this.tbxState.Size = new System.Drawing.Size(100, 20);
-            this.tbxState.TabIndex = 13;
+            this.lblState.AutoSize = true;
+            this.lblState.Location = new System.Drawing.Point(97, 182);
+            this.lblState.Name = "lblState";
+            this.lblState.Size = new System.Drawing.Size(35, 13);
+            this.lblState.TabIndex = 3;
+            this.lblState.Text = "State:";
             // 
-            // tbxZip
+            // lblAddress
             // 
-            this.tbxZip.Location = new System.Drawing.Point(370, 44);
-            this.tbxZip.Name = "tbxZip";
-            this.tbxZip.Size = new System.Drawing.Size(100, 20);
-            this.tbxZip.TabIndex = 14;
+            this.lblAddress.AutoSize = true;
+            this.lblAddress.Location = new System.Drawing.Point(84, 115);
+            this.lblAddress.Name = "lblAddress";
+            this.lblAddress.Size = new System.Drawing.Size(48, 13);
+            this.lblAddress.TabIndex = 2;
+            this.lblAddress.Text = "Address:";
             // 
-            // tbxCreditCardNo
+            // lblLastName
             // 
-            this.tbxCreditCardNo.Location = new System.Drawing.Point(370, 82);
-            this.tbxCreditCardNo.Name = "tbxCreditCardNo";
-            this.tbxCreditCardNo.Size = new System.Drawing.Size(100, 20);
-            this.tbxCreditCardNo.TabIndex = 15;
+            this.lblLastName.AutoSize = true;
+            this.lblLastName.Location = new System.Drawing.Point(71, 80);
+            this.lblLastName.Name = "lblLastName";
+            this.lblLastName.Size = new System.Drawing.Size(61, 13);
+            this.lblLastName.TabIndex = 1;
+            this.lblLastName.Text = "Last Name:";
             // 
-            // tbxExpirationDate
+            // lblFirstName
             // 
-            this.tbxExpirationDate.Location = new System.Drawing.Point(370, 121);
-            this.tbxExpirationDate.Name = "tbxExpirationDate";
-            this.tbxExpirationDate.Size = new System.Drawing.Size(100, 20);
-            this.tbxExpirationDate.TabIndex = 16;
-            // 
-            // tbxCCV
-            // 
-            this.tbxCCV.Location = new System.Drawing.Point(370, 157);
-            this.tbxCCV.Name = "tbxCCV";
-            this.tbxCCV.Size = new System.Drawing.Size(100, 20);
-            this.tbxCCV.TabIndex = 17;
+            this.lblFirstName.AutoSize = true;
+            this.lblFirstName.Location = new System.Drawing.Point(72, 43);
+            this.lblFirstName.Name = "lblFirstName";
+            this.lblFirstName.Size = new System.Drawing.Size(60, 13);
+            this.lblFirstName.TabIndex = 0;
+            this.lblFirstName.Text = "First Name:";
             // 
             // lblOrderTotal
             // 

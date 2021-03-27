@@ -52,6 +52,18 @@
     <Compile Include="frmCheckout.Designer.cs">
       <DependentUpon>frmCheckout.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCustomerOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustomerOrderForm.Designer.cs">
+      <DependentUpon>frmCustomerOrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmployeeMainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmployeeMainMenu.Designer.cs">
+      <DependentUpon>frmEmployeeMainMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEmployeeOrderForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,16 +76,31 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCustomerMainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustomerMainMenu.Designer.cs">
+      <DependentUpon>frmCustomerMainMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmCheckout.resx">
       <DependentUpon>frmCheckout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCustomerOrderForm.resx">
+      <DependentUpon>frmCustomerOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmployeeMainMenu.resx">
+      <DependentUpon>frmEmployeeMainMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEmployeeOrderForm.resx">
       <DependentUpon>frmEmployeeOrderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCustomerMainMenu.resx">
+      <DependentUpon>frmCustomerMainMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
