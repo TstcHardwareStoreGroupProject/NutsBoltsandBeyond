@@ -29,34 +29,45 @@
         private void InitializeComponent()
         {
             this.btnPlaceOrder = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAccountInfo = new System.Windows.Forms.Button();
+            this.btnContactUs = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnPlaceOrder
             // 
-            this.btnPlaceOrder.Location = new System.Drawing.Point(56, 75);
+            this.btnPlaceOrder.Location = new System.Drawing.Point(53, 35);
             this.btnPlaceOrder.Name = "btnPlaceOrder";
             this.btnPlaceOrder.Size = new System.Drawing.Size(147, 23);
             this.btnPlaceOrder.TabIndex = 0;
             this.btnPlaceOrder.Text = "Place An Order";
             this.btnPlaceOrder.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnAccountInfo
             // 
-            this.button1.Location = new System.Drawing.Point(436, 75);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(147, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Update Account Info";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAccountInfo.Location = new System.Drawing.Point(53, 92);
+            this.btnAccountInfo.Name = "btnAccountInfo";
+            this.btnAccountInfo.Size = new System.Drawing.Size(147, 23);
+            this.btnAccountInfo.TabIndex = 1;
+            this.btnAccountInfo.Text = "Manage Account Info";
+            this.btnAccountInfo.UseVisualStyleBackColor = true;
+            // 
+            // btnContactUs
+            // 
+            this.btnContactUs.Location = new System.Drawing.Point(53, 151);
+            this.btnContactUs.Name = "btnContactUs";
+            this.btnContactUs.Size = new System.Drawing.Size(147, 23);
+            this.btnContactUs.TabIndex = 2;
+            this.btnContactUs.Text = "Contact Us";
+            this.btnContactUs.UseVisualStyleBackColor = true;
             // 
             // frmCustomerMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(645, 450);
+            this.ClientSize = new System.Drawing.Size(252, 220);
             this.ControlBox = false;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnContactUs);
+            this.Controls.Add(this.btnAccountInfo);
             this.Controls.Add(this.btnPlaceOrder);
             this.Name = "frmCustomerMainMenu";
             this.Text = "Customer Main Menu";
@@ -67,6 +78,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnPlaceOrder;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAccountInfo;
+        private System.Windows.Forms.Button btnContactUs;
     }
 }

@@ -52,6 +52,12 @@
     <Compile Include="frmCheckout.Designer.cs">
       <DependentUpon>frmCheckout.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCustomerAccountInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustomerAccountInfo.Designer.cs">
+      <DependentUpon>frmCustomerAccountInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCustomerOrderForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +76,12 @@
     <Compile Include="frmEmployeeOrderForm.Designer.cs">
       <DependentUpon>frmEmployeeOrderForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInventory.Designer.cs">
+      <DependentUpon>frmInventory.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +99,9 @@
     <EmbeddedResource Include="frmCheckout.resx">
       <DependentUpon>frmCheckout.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCustomerAccountInfo.resx">
+      <DependentUpon>frmCustomerAccountInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCustomerOrderForm.resx">
       <DependentUpon>frmCustomerOrderForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -95,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEmployeeOrderForm.resx">
       <DependentUpon>frmEmployeeOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInventory.resx">
+      <DependentUpon>frmInventory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

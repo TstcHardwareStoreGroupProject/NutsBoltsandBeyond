@@ -8,3 +8,10 @@ C:\Users\codex\Desktop\Hardware Store Group Project\NutsBoltsandBeyondHardwareSt
 C:\Users\codex\Desktop\Hardware Store Group Project\NutsBoltsandBeyondHardwareStore\obj\Debug\NutsBoltsandBeyondHardwareStore.csproj.CoreCompileInputs.cache
 C:\Users\codex\Desktop\Hardware Store Group Project\NutsBoltsandBeyondHardwareStore\obj\Debug\NutsBoltsandBeyondHardwareStore.exe
 C:\Users\codex\Desktop\Hardware Store Group Project\NutsBoltsandBeyondHardwareStore\obj\Debug\NutsBoltsandBeyondHardwareStore.pdb
+C:\Users\codex\Desktop\Hardware Store Group Project\NutsBoltsandBeyondHardwareStore\obj\Debug\NutsBoltsandBeyondHardwareStore.frmCheckout.resources
+C:\Users\codex\Desktop\Hardware Store Group Project\NutsBoltsandBeyondHardwareStore\obj\Debug\NutsBoltsandBeyondHardwareStore.frmCustomerOrderForm.resources
+C:\Users\codex\Desktop\Hardware Store Group Project\NutsBoltsandBeyondHardwareStore\obj\Debug\NutsBoltsandBeyondHardwareStore.frmEmployeeMainMenu.resources
+C:\Users\codex\Desktop\Hardware Store Group Project\NutsBoltsandBeyondHardwareStore\obj\Debug\NutsBoltsandBeyondHardwareStore.frmEmployeeOrderForm.resources
+C:\Users\codex\Desktop\Hardware Store Group Project\NutsBoltsandBeyondHardwareStore\obj\Debug\NutsBoltsandBeyondHardwareStore.frmCustomerMainMenu.resources
+C:\Users\codex\Desktop\Hardware Store Group Project\NutsBoltsandBeyondHardwareStore\obj\Debug\NutsBoltsandBeyondHardwareStore.frmCustomerAccountInfo.resources
+C:\Users\codex\Desktop\Hardware Store Group Project\NutsBoltsandBeyondHardwareStore\obj\Debug\NutsBoltsandBeyondHardwareStore.frmInventory.resources
