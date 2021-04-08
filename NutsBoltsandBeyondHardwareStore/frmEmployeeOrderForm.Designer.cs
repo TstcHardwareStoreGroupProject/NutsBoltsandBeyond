@@ -41,7 +41,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.lbxOrderList = new System.Windows.Forms.ListBox();
             this.btnOrder = new System.Windows.Forms.Button();
-            this.btnBack = new System.Windows.Forms.Button();
+            this.btnExitMenu = new System.Windows.Forms.Button();
             this.gbxOrder.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -164,14 +164,14 @@
             this.btnOrder.Text = "Place Order";
             this.btnOrder.UseVisualStyleBackColor = true;
             // 
-            // btnBack
+            // btnExitMenu
             // 
-            this.btnBack.Location = new System.Drawing.Point(331, 267);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(93, 43);
-            this.btnBack.TabIndex = 13;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnExitMenu.Location = new System.Drawing.Point(331, 267);
+            this.btnExitMenu.Name = "btnExitMenu";
+            this.btnExitMenu.Size = new System.Drawing.Size(93, 43);
+            this.btnExitMenu.TabIndex = 13;
+            this.btnExitMenu.Text = "Exit Menu";
+            this.btnExitMenu.UseVisualStyleBackColor = true;
             // 
             // frmEmployeeOrderForm
             // 
@@ -179,7 +179,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(604, 358);
             this.ControlBox = false;
-            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.btnExitMenu);
             this.Controls.Add(this.btnOrder);
             this.Controls.Add(this.lbxOrderList);
             this.Controls.Add(this.gbxOrder);
@@ -207,6 +207,6 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.ListBox lbxOrderList;
         private System.Windows.Forms.Button btnOrder;
-        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnExitMenu;
     }
 }
