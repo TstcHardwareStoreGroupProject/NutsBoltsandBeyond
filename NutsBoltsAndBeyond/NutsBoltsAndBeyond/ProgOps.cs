@@ -57,9 +57,41 @@ namespace NutsBoltsAndBeyond
         #endregion
 
         #region Delete Methods
+
+        public static bool _deleteManagerFromDB(int ID)
+        {
+            String del;
+            bool flag = false;
+
+            //S
+                try
+                {
+                    using (_cntDatabase = new SqlConnection(Utils.CONNECT_STRING))
+                    {
+                        del = "DELETE FROM " + Utils.DB + ".USER_DETAILS ";
+                        del += "WHERE USER_ID = " + ID;
+
+                        using (SqlCommand cmd = new SqlCommand(del, _cntDatabase))
+                        {
+                            _cntDatabase.Open();
+                            cmd.ExecuteNonQuery();
+                        }
+                        flag = true;
+                        CloseDB();
+                    }
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                return flag;
+        }
+
         #endregion
 
         #region Save Model Methods
+
+        //Use with try/catch in program to confirm save
 
         /*
         *   Insert Manager model to DB        
