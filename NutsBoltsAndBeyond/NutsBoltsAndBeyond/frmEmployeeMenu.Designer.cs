@@ -65,6 +65,7 @@ namespace NutsBoltsAndBeyond
             this.btnShop.TabIndex = 6;
             this.btnShop.Text = "&SHOP";
             this.btnShop.UseVisualStyleBackColor = true;
+            this.btnShop.Click += new System.EventHandler(this.btnShop_Click);
             // 
             // btnStock
             // 
@@ -74,6 +75,7 @@ namespace NutsBoltsAndBeyond
             this.btnStock.TabIndex = 8;
             this.btnStock.Text = "MANAGE &STOCK";
             this.btnStock.UseVisualStyleBackColor = true;
+            this.btnStock.Click += new System.EventHandler(this.btnStock_Click);
             // 
             // btnCus
             // 
@@ -83,6 +85,7 @@ namespace NutsBoltsAndBeyond
             this.btnCus.TabIndex = 9;
             this.btnCus.Text = "MANAGE &CUSTOMERS";
             this.btnCus.UseVisualStyleBackColor = true;
+            this.btnCus.Click += new System.EventHandler(this.btnCus_Click);
             // 
             // btnExit
             // 
@@ -92,6 +95,7 @@ namespace NutsBoltsAndBeyond
             this.btnExit.TabIndex = 10;
             this.btnExit.Text = "E&XIT";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // frmEmployeeMenu
             // 

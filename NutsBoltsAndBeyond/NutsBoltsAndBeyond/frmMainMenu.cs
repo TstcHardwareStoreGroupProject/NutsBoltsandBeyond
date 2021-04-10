@@ -22,5 +22,17 @@ namespace NutsBoltsAndBeyond
         {
             Application.Exit();
         }
+
+        private void btnShop_Click(object sender, EventArgs e)
+        {
+            frmShop shop = new frmShop();
+            shop.Show();
+            this.Close();
+        }
+
+        private void btnAcct_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("COMING SOON", "UNDER CONSTRUCTION", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }

@@ -64,6 +64,7 @@ namespace NutsBoltsAndBeyond
             this.btnShop.TabIndex = 6;
             this.btnShop.Text = "&SHOP";
             this.btnShop.UseVisualStyleBackColor = true;
+            this.btnShop.Click += new System.EventHandler(this.btnShop_Click);
             // 
             // btnAcct
             // 
@@ -73,6 +74,7 @@ namespace NutsBoltsAndBeyond
             this.btnAcct.TabIndex = 7;
             this.btnAcct.Text = "MANAGE &ACCOUNT";
             this.btnAcct.UseVisualStyleBackColor = true;
+            this.btnAcct.Click += new System.EventHandler(this.btnAcct_Click);
             // 
             // btnExit
             // 
