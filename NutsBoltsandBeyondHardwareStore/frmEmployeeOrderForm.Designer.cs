@@ -161,7 +161,7 @@
             this.btnOrder.Name = "btnOrder";
             this.btnOrder.Size = new System.Drawing.Size(93, 43);
             this.btnOrder.TabIndex = 12;
-            this.btnOrder.Text = "Place Order";
+            this.btnOrder.Text = "&Place Order";
             this.btnOrder.UseVisualStyleBackColor = true;
             // 
             // btnExitMenu
@@ -170,7 +170,7 @@
             this.btnExitMenu.Name = "btnExitMenu";
             this.btnExitMenu.Size = new System.Drawing.Size(93, 43);
             this.btnExitMenu.TabIndex = 13;
-            this.btnExitMenu.Text = "Exit Menu";
+            this.btnExitMenu.Text = "E&xit Menu";
             this.btnExitMenu.UseVisualStyleBackColor = true;
             // 
             // frmEmployeeOrderForm
@@ -184,7 +184,7 @@
             this.Controls.Add(this.lbxOrderList);
             this.Controls.Add(this.gbxOrder);
             this.Name = "frmEmployeeOrderForm";
-            this.Text = "    ";
+            this.Text = "Employee Order Form";
             this.Load += new System.EventHandler(this.frmEmployeeOrderForm_Load);
             this.gbxOrder.ResumeLayout(false);
             this.gbxOrder.PerformLayout();

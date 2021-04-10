@@ -32,25 +32,32 @@
             this.lblCustomerID = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.gbxBasicInfo = new System.Windows.Forms.GroupBox();
-            this.gbxPaymentInfo = new System.Windows.Forms.GroupBox();
-            this.btnSaveInfo = new System.Windows.Forms.Button();
-            this.lblLastName = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblZip = new System.Windows.Forms.Label();
-            this.lblCreditCardNum = new System.Windows.Forms.Label();
-            this.lblExpDate = new System.Windows.Forms.Label();
-            this.lblCCV = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblZip = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblLastName = new System.Windows.Forms.Label();
+            this.gbxPaymentInfo = new System.Windows.Forms.GroupBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.lblCCV = new System.Windows.Forms.Label();
+            this.lblExpDate = new System.Windows.Forms.Label();
+            this.lblCreditCardNum = new System.Windows.Forms.Label();
+            this.btnSaveInfo = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
+            this.gbxChangePassword = new System.Windows.Forms.GroupBox();
+            this.lblCurrentPass = new System.Windows.Forms.Label();
+            this.lblNewPass = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.btnCheckValid = new System.Windows.Forms.Button();
             this.gbxBasicInfo.SuspendLayout();
             this.gbxPaymentInfo.SuspendLayout();
+            this.gbxChangePassword.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnClose
@@ -59,7 +66,7 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(99, 23);
             this.btnClose.TabIndex = 0;
-            this.btnClose.Text = "Close Window";
+            this.btnClose.Text = "&Close Window";
             this.btnClose.UseVisualStyleBackColor = true;
             // 
             // lblCustomerID
@@ -99,6 +106,73 @@
             this.gbxBasicInfo.TabStop = false;
             this.gbxBasicInfo.Text = "Basic Info";
             // 
+            // textBox5
+            // 
+            this.textBox5.Enabled = false;
+            this.textBox5.Location = new System.Drawing.Point(98, 131);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(100, 20);
+            this.textBox5.TabIndex = 10;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Enabled = false;
+            this.textBox4.Location = new System.Drawing.Point(98, 105);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.TabIndex = 9;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Enabled = false;
+            this.textBox3.Location = new System.Drawing.Point(98, 79);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.TabIndex = 8;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Enabled = false;
+            this.textBox2.Location = new System.Drawing.Point(98, 54);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 7;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Enabled = false;
+            this.textBox1.Location = new System.Drawing.Point(98, 27);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 6;
+            // 
+            // lblZip
+            // 
+            this.lblZip.AutoSize = true;
+            this.lblZip.Location = new System.Drawing.Point(42, 134);
+            this.lblZip.Name = "lblZip";
+            this.lblZip.Size = new System.Drawing.Size(50, 13);
+            this.lblZip.TabIndex = 5;
+            this.lblZip.Text = "Zip Code";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(47, 108);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(45, 13);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Address";
+            // 
+            // lblLastName
+            // 
+            this.lblLastName.AutoSize = true;
+            this.lblLastName.Location = new System.Drawing.Point(34, 82);
+            this.lblLastName.Name = "lblLastName";
+            this.lblLastName.Size = new System.Drawing.Size(58, 13);
+            this.lblLastName.TabIndex = 3;
+            this.lblLastName.Text = "Last Name";
+            // 
             // gbxPaymentInfo
             // 
             this.gbxPaymentInfo.Controls.Add(this.textBox6);
@@ -114,109 +188,6 @@
             this.gbxPaymentInfo.TabStop = false;
             this.gbxPaymentInfo.Text = "Payment Info";
             // 
-            // btnSaveInfo
-            // 
-            this.btnSaveInfo.Location = new System.Drawing.Point(460, 159);
-            this.btnSaveInfo.Name = "btnSaveInfo";
-            this.btnSaveInfo.Size = new System.Drawing.Size(75, 23);
-            this.btnSaveInfo.TabIndex = 4;
-            this.btnSaveInfo.Text = "Save";
-            this.btnSaveInfo.UseVisualStyleBackColor = true;
-            // 
-            // lblLastName
-            // 
-            this.lblLastName.AutoSize = true;
-            this.lblLastName.Location = new System.Drawing.Point(34, 82);
-            this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(58, 13);
-            this.lblLastName.TabIndex = 3;
-            this.lblLastName.Text = "Last Name";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(47, 108);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Address";
-            // 
-            // lblZip
-            // 
-            this.lblZip.AutoSize = true;
-            this.lblZip.Location = new System.Drawing.Point(42, 134);
-            this.lblZip.Name = "lblZip";
-            this.lblZip.Size = new System.Drawing.Size(50, 13);
-            this.lblZip.TabIndex = 5;
-            this.lblZip.Text = "Zip Code";
-            // 
-            // lblCreditCardNum
-            // 
-            this.lblCreditCardNum.AutoSize = true;
-            this.lblCreditCardNum.Location = new System.Drawing.Point(19, 35);
-            this.lblCreditCardNum.Name = "lblCreditCardNum";
-            this.lblCreditCardNum.Size = new System.Drawing.Size(69, 13);
-            this.lblCreditCardNum.TabIndex = 6;
-            this.lblCreditCardNum.Text = "Credit Card #";
-            // 
-            // lblExpDate
-            // 
-            this.lblExpDate.AutoSize = true;
-            this.lblExpDate.Location = new System.Drawing.Point(37, 61);
-            this.lblExpDate.Name = "lblExpDate";
-            this.lblExpDate.Size = new System.Drawing.Size(51, 13);
-            this.lblExpDate.TabIndex = 7;
-            this.lblExpDate.Text = "Exp Date";
-            // 
-            // lblCCV
-            // 
-            this.lblCCV.AutoSize = true;
-            this.lblCCV.Location = new System.Drawing.Point(60, 87);
-            this.lblCCV.Name = "lblCCV";
-            this.lblCCV.Size = new System.Drawing.Size(28, 13);
-            this.lblCCV.TabIndex = 8;
-            this.lblCCV.Text = "CCV";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(98, 27);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 6;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(98, 54);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 7;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(98, 79);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 8;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(98, 105);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 9;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Enabled = false;
-            this.textBox5.Location = new System.Drawing.Point(98, 131);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 10;
-            // 
             // textBox6
             // 
             this.textBox6.Enabled = false;
@@ -224,14 +195,6 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(139, 20);
             this.textBox6.TabIndex = 11;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Enabled = false;
-            this.textBox7.Location = new System.Drawing.Point(94, 58);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(139, 20);
-            this.textBox7.TabIndex = 12;
             // 
             // textBox8
             // 
@@ -242,21 +205,121 @@
             this.textBox8.Size = new System.Drawing.Size(53, 20);
             this.textBox8.TabIndex = 13;
             // 
+            // textBox7
+            // 
+            this.textBox7.Enabled = false;
+            this.textBox7.Location = new System.Drawing.Point(94, 58);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(139, 20);
+            this.textBox7.TabIndex = 12;
+            // 
+            // lblCCV
+            // 
+            this.lblCCV.AutoSize = true;
+            this.lblCCV.Location = new System.Drawing.Point(60, 87);
+            this.lblCCV.Name = "lblCCV";
+            this.lblCCV.Size = new System.Drawing.Size(28, 13);
+            this.lblCCV.TabIndex = 8;
+            this.lblCCV.Text = "CCV";
+            // 
+            // lblExpDate
+            // 
+            this.lblExpDate.AutoSize = true;
+            this.lblExpDate.Location = new System.Drawing.Point(37, 61);
+            this.lblExpDate.Name = "lblExpDate";
+            this.lblExpDate.Size = new System.Drawing.Size(51, 13);
+            this.lblExpDate.TabIndex = 7;
+            this.lblExpDate.Text = "Exp Date";
+            // 
+            // lblCreditCardNum
+            // 
+            this.lblCreditCardNum.AutoSize = true;
+            this.lblCreditCardNum.Location = new System.Drawing.Point(19, 35);
+            this.lblCreditCardNum.Name = "lblCreditCardNum";
+            this.lblCreditCardNum.Size = new System.Drawing.Size(69, 13);
+            this.lblCreditCardNum.TabIndex = 6;
+            this.lblCreditCardNum.Text = "Credit Card #";
+            // 
+            // btnSaveInfo
+            // 
+            this.btnSaveInfo.Location = new System.Drawing.Point(460, 159);
+            this.btnSaveInfo.Name = "btnSaveInfo";
+            this.btnSaveInfo.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveInfo.TabIndex = 4;
+            this.btnSaveInfo.Text = "&Save";
+            this.btnSaveInfo.UseVisualStyleBackColor = true;
+            // 
             // btnEdit
             // 
             this.btnEdit.Location = new System.Drawing.Point(319, 159);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 11;
-            this.btnEdit.Text = "Edit";
+            this.btnEdit.Text = "&Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            // 
+            // gbxChangePassword
+            // 
+            this.gbxChangePassword.Controls.Add(this.btnCheckValid);
+            this.gbxChangePassword.Controls.Add(this.textBox10);
+            this.gbxChangePassword.Controls.Add(this.textBox9);
+            this.gbxChangePassword.Controls.Add(this.lblNewPass);
+            this.gbxChangePassword.Controls.Add(this.lblCurrentPass);
+            this.gbxChangePassword.Location = new System.Drawing.Point(31, 228);
+            this.gbxChangePassword.Name = "gbxChangePassword";
+            this.gbxChangePassword.Size = new System.Drawing.Size(363, 107);
+            this.gbxChangePassword.TabIndex = 12;
+            this.gbxChangePassword.TabStop = false;
+            this.gbxChangePassword.Text = "Change Password";
+            // 
+            // lblCurrentPass
+            // 
+            this.lblCurrentPass.AutoSize = true;
+            this.lblCurrentPass.Location = new System.Drawing.Point(6, 30);
+            this.lblCurrentPass.Name = "lblCurrentPass";
+            this.lblCurrentPass.Size = new System.Drawing.Size(93, 13);
+            this.lblCurrentPass.TabIndex = 0;
+            this.lblCurrentPass.Text = "Current Password:";
+            // 
+            // lblNewPass
+            // 
+            this.lblNewPass.AutoSize = true;
+            this.lblNewPass.Location = new System.Drawing.Point(18, 66);
+            this.lblNewPass.Name = "lblNewPass";
+            this.lblNewPass.Size = new System.Drawing.Size(81, 13);
+            this.lblNewPass.TabIndex = 1;
+            this.lblNewPass.Text = "New Password:";
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(105, 27);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(100, 20);
+            this.textBox9.TabIndex = 2;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(105, 63);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(100, 20);
+            this.textBox10.TabIndex = 3;
+            // 
+            // btnCheckValid
+            // 
+            this.btnCheckValid.Location = new System.Drawing.Point(251, 30);
+            this.btnCheckValid.Name = "btnCheckValid";
+            this.btnCheckValid.Size = new System.Drawing.Size(94, 54);
+            this.btnCheckValid.TabIndex = 4;
+            this.btnCheckValid.Text = "&Verify/Change";
+            this.btnCheckValid.UseVisualStyleBackColor = true;
             // 
             // frmCustomerAccountInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 236);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.ControlBox = false;
+            this.Controls.Add(this.gbxChangePassword);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnSaveInfo);
             this.Controls.Add(this.gbxPaymentInfo);
@@ -268,6 +331,8 @@
             this.gbxBasicInfo.PerformLayout();
             this.gbxPaymentInfo.ResumeLayout(false);
             this.gbxPaymentInfo.PerformLayout();
+            this.gbxChangePassword.ResumeLayout(false);
+            this.gbxChangePassword.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -295,5 +360,11 @@
         private System.Windows.Forms.Label lblCreditCardNum;
         private System.Windows.Forms.Button btnSaveInfo;
         private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.GroupBox gbxChangePassword;
+        private System.Windows.Forms.Button btnCheckValid;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Label lblNewPass;
+        private System.Windows.Forms.Label lblCurrentPass;
     }
 }

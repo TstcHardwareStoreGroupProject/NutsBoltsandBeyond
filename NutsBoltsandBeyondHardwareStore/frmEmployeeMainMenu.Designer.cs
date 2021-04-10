@@ -38,35 +38,35 @@
             // 
             // btnOrderProducts
             // 
-            this.btnOrderProducts.Location = new System.Drawing.Point(87, 127);
+            this.btnOrderProducts.Location = new System.Drawing.Point(49, 77);
             this.btnOrderProducts.Name = "btnOrderProducts";
             this.btnOrderProducts.Size = new System.Drawing.Size(120, 23);
             this.btnOrderProducts.TabIndex = 0;
-            this.btnOrderProducts.Text = "Order Products";
+            this.btnOrderProducts.Text = "&Order Products";
             this.btnOrderProducts.UseVisualStyleBackColor = true;
             // 
             // btnInventory
             // 
-            this.btnInventory.Location = new System.Drawing.Point(87, 98);
+            this.btnInventory.Location = new System.Drawing.Point(49, 48);
             this.btnInventory.Name = "btnInventory";
             this.btnInventory.Size = new System.Drawing.Size(120, 23);
             this.btnInventory.TabIndex = 1;
-            this.btnInventory.Text = "Inventory";
+            this.btnInventory.Text = "&Inventory";
             this.btnInventory.UseVisualStyleBackColor = true;
             // 
             // btnManageEmployees
             // 
-            this.btnManageEmployees.Location = new System.Drawing.Point(87, 232);
+            this.btnManageEmployees.Location = new System.Drawing.Point(49, 151);
             this.btnManageEmployees.Name = "btnManageEmployees";
             this.btnManageEmployees.Size = new System.Drawing.Size(120, 23);
             this.btnManageEmployees.TabIndex = 2;
-            this.btnManageEmployees.Text = "Manage Employees";
+            this.btnManageEmployees.Text = "Manage &Employees";
             this.btnManageEmployees.UseVisualStyleBackColor = true;
             // 
             // lblEmployeeOptions
             // 
             this.lblEmployeeOptions.AutoSize = true;
-            this.lblEmployeeOptions.Location = new System.Drawing.Point(84, 82);
+            this.lblEmployeeOptions.Location = new System.Drawing.Point(46, 32);
             this.lblEmployeeOptions.Name = "lblEmployeeOptions";
             this.lblEmployeeOptions.Size = new System.Drawing.Size(95, 13);
             this.lblEmployeeOptions.TabIndex = 3;
@@ -75,7 +75,7 @@
             // lblManagerOptions
             // 
             this.lblManagerOptions.AutoSize = true;
-            this.lblManagerOptions.Location = new System.Drawing.Point(84, 216);
+            this.lblManagerOptions.Location = new System.Drawing.Point(46, 135);
             this.lblManagerOptions.Name = "lblManagerOptions";
             this.lblManagerOptions.Size = new System.Drawing.Size(91, 13);
             this.lblManagerOptions.TabIndex = 4;
@@ -83,18 +83,18 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(104, 321);
+            this.btnBack.Location = new System.Drawing.Point(66, 199);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 5;
-            this.btnBack.Text = "Back";
+            this.btnBack.Text = "&Back";
             this.btnBack.UseVisualStyleBackColor = true;
             // 
             // frmEmployeeMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(299, 388);
+            this.ClientSize = new System.Drawing.Size(220, 307);
             this.ControlBox = false;
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblManagerOptions);

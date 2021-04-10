@@ -52,6 +52,12 @@
     <Compile Include="frmCheckout.Designer.cs">
       <DependentUpon>frmCheckout.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmContactUs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmContactUs.Designer.cs">
+      <DependentUpon>frmContactUs.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCustomerAccountInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,10 +100,19 @@
     <Compile Include="frmCustomerMainMenu.Designer.cs">
       <DependentUpon>frmCustomerMainMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmManageEmployees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManageEmployees.Designer.cs">
+      <DependentUpon>frmManageEmployees.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmCheckout.resx">
       <DependentUpon>frmCheckout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmContactUs.resx">
+      <DependentUpon>frmContactUs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCustomerAccountInfo.resx">
       <DependentUpon>frmCustomerAccountInfo.cs</DependentUpon>
@@ -119,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCustomerMainMenu.resx">
       <DependentUpon>frmCustomerMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManageEmployees.resx">
+      <DependentUpon>frmManageEmployees.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

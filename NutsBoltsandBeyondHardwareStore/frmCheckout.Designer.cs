@@ -292,7 +292,7 @@
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.Size = new System.Drawing.Size(75, 23);
             this.btnCheckOut.TabIndex = 5;
-            this.btnCheckOut.Text = "Check Out";
+            this.btnCheckOut.Text = "&Check Out";
             this.btnCheckOut.UseVisualStyleBackColor = true;
             // 
             // frmCheckout

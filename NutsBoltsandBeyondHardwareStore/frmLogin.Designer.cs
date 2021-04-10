@@ -101,7 +101,7 @@
             this.btnLogIn.Name = "btnLogIn";
             this.btnLogIn.Size = new System.Drawing.Size(75, 23);
             this.btnLogIn.TabIndex = 3;
-            this.btnLogIn.Text = "Log In";
+            this.btnLogIn.Text = "L&og In";
             this.btnLogIn.UseVisualStyleBackColor = true;
             this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
             // 
@@ -111,7 +111,7 @@
             this.btnSignUp.Name = "btnSignUp";
             this.btnSignUp.Size = new System.Drawing.Size(111, 23);
             this.btnSignUp.TabIndex = 4;
-            this.btnSignUp.Text = "Sign Up";
+            this.btnSignUp.Text = "S&ign Up";
             this.btnSignUp.UseVisualStyleBackColor = true;
             this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
@@ -121,7 +121,7 @@
             this.btnResetPassword.Name = "btnResetPassword";
             this.btnResetPassword.Size = new System.Drawing.Size(111, 23);
             this.btnResetPassword.TabIndex = 5;
-            this.btnResetPassword.Text = "Reset Password";
+            this.btnResetPassword.Text = "R&eset Password";
             this.btnResetPassword.UseVisualStyleBackColor = true;
             this.btnResetPassword.Click += new System.EventHandler(this.btnResetPassword_Click);
             // 

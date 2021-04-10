@@ -49,7 +49,7 @@
             // 
             // btnAddToOrder
             // 
-            this.btnAddToOrder.Location = new System.Drawing.Point(301, 199);
+            this.btnAddToOrder.Location = new System.Drawing.Point(320, 171);
             this.btnAddToOrder.Name = "btnAddToOrder";
             this.btnAddToOrder.Size = new System.Drawing.Size(116, 23);
             this.btnAddToOrder.TabIndex = 1;
@@ -58,7 +58,7 @@
             // 
             // btnRemoveFromOrder
             // 
-            this.btnRemoveFromOrder.Location = new System.Drawing.Point(301, 228);
+            this.btnRemoveFromOrder.Location = new System.Drawing.Point(320, 200);
             this.btnRemoveFromOrder.Name = "btnRemoveFromOrder";
             this.btnRemoveFromOrder.Size = new System.Drawing.Size(116, 23);
             this.btnRemoveFromOrder.TabIndex = 2;
@@ -67,7 +67,7 @@
             // 
             // lblItemID
             // 
-            this.lblItemID.Location = new System.Drawing.Point(104, 60);
+            this.lblItemID.Location = new System.Drawing.Point(123, 32);
             this.lblItemID.Name = "lblItemID";
             this.lblItemID.Size = new System.Drawing.Size(61, 23);
             this.lblItemID.TabIndex = 3;
@@ -76,7 +76,7 @@
             // 
             // lblItemName
             // 
-            this.lblItemName.Location = new System.Drawing.Point(104, 92);
+            this.lblItemName.Location = new System.Drawing.Point(123, 64);
             this.lblItemName.Name = "lblItemName";
             this.lblItemName.Size = new System.Drawing.Size(61, 23);
             this.lblItemName.TabIndex = 4;
@@ -85,7 +85,7 @@
             // 
             // lblPrice
             // 
-            this.lblPrice.Location = new System.Drawing.Point(104, 120);
+            this.lblPrice.Location = new System.Drawing.Point(123, 92);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(61, 23);
             this.lblPrice.TabIndex = 5;
@@ -95,7 +95,7 @@
             // label4
             // 
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Location = new System.Drawing.Point(171, 60);
+            this.label4.Location = new System.Drawing.Point(190, 32);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(185, 23);
             this.label4.TabIndex = 6;
@@ -104,7 +104,7 @@
             // label5
             // 
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Location = new System.Drawing.Point(171, 92);
+            this.label5.Location = new System.Drawing.Point(190, 64);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(185, 23);
             this.label5.TabIndex = 7;
@@ -113,7 +113,7 @@
             // label6
             // 
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label6.Location = new System.Drawing.Point(171, 120);
+            this.label6.Location = new System.Drawing.Point(190, 92);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(185, 23);
             this.label6.TabIndex = 8;
@@ -121,7 +121,7 @@
             // 
             // btnPreviousItem
             // 
-            this.btnPreviousItem.Location = new System.Drawing.Point(132, 173);
+            this.btnPreviousItem.Location = new System.Drawing.Point(151, 145);
             this.btnPreviousItem.Name = "btnPreviousItem";
             this.btnPreviousItem.Size = new System.Drawing.Size(91, 23);
             this.btnPreviousItem.TabIndex = 9;
@@ -130,7 +130,7 @@
             // 
             // btnNextItem
             // 
-            this.btnNextItem.Location = new System.Drawing.Point(229, 173);
+            this.btnNextItem.Location = new System.Drawing.Point(248, 145);
             this.btnNextItem.Name = "btnNextItem";
             this.btnNextItem.Size = new System.Drawing.Size(91, 23);
             this.btnNextItem.TabIndex = 10;
@@ -140,14 +140,14 @@
             // lbxShoppingList
             // 
             this.lbxShoppingList.FormattingEnabled = true;
-            this.lbxShoppingList.Location = new System.Drawing.Point(455, 60);
+            this.lbxShoppingList.Location = new System.Drawing.Point(474, 32);
             this.lbxShoppingList.Name = "lbxShoppingList";
             this.lbxShoppingList.Size = new System.Drawing.Size(131, 147);
             this.lbxShoppingList.TabIndex = 11;
             // 
             // btnCheckout
             // 
-            this.btnCheckout.Location = new System.Drawing.Point(475, 231);
+            this.btnCheckout.Location = new System.Drawing.Point(494, 203);
             this.btnCheckout.Name = "btnCheckout";
             this.btnCheckout.Size = new System.Drawing.Size(75, 23);
             this.btnCheckout.TabIndex = 12;
@@ -156,7 +156,7 @@
             // 
             // btnFirst
             // 
-            this.btnFirst.Location = new System.Drawing.Point(35, 173);
+            this.btnFirst.Location = new System.Drawing.Point(54, 145);
             this.btnFirst.Name = "btnFirst";
             this.btnFirst.Size = new System.Drawing.Size(91, 23);
             this.btnFirst.TabIndex = 13;
@@ -165,7 +165,7 @@
             // 
             // btnLast
             // 
-            this.btnLast.Location = new System.Drawing.Point(326, 173);
+            this.btnLast.Location = new System.Drawing.Point(345, 145);
             this.btnLast.Name = "btnLast";
             this.btnLast.Size = new System.Drawing.Size(91, 23);
             this.btnLast.TabIndex = 14;
@@ -174,7 +174,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(35, 231);
+            this.btnSearch.Location = new System.Drawing.Point(54, 203);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(104, 23);
             this.btnSearch.TabIndex = 15;
@@ -183,25 +183,25 @@
             // 
             // tbxItemtoSearchFor
             // 
-            this.tbxItemtoSearchFor.Location = new System.Drawing.Point(35, 202);
+            this.tbxItemtoSearchFor.Location = new System.Drawing.Point(54, 174);
             this.tbxItemtoSearchFor.Name = "tbxItemtoSearchFor";
             this.tbxItemtoSearchFor.Size = new System.Drawing.Size(172, 20);
             this.tbxItemtoSearchFor.TabIndex = 16;
             // 
             // btnExitMenu
             // 
-            this.btnExitMenu.Location = new System.Drawing.Point(281, 273);
+            this.btnExitMenu.Location = new System.Drawing.Point(300, 245);
             this.btnExitMenu.Name = "btnExitMenu";
             this.btnExitMenu.Size = new System.Drawing.Size(75, 33);
             this.btnExitMenu.TabIndex = 17;
-            this.btnExitMenu.Text = "Exit Menu";
+            this.btnExitMenu.Text = "E&xit Menu";
             this.btnExitMenu.UseVisualStyleBackColor = true;
             // 
             // frmCustomerOrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(678, 334);
+            this.ClientSize = new System.Drawing.Size(678, 312);
             this.ControlBox = false;
             this.Controls.Add(this.btnExitMenu);
             this.Controls.Add(this.tbxItemtoSearchFor);
@@ -221,7 +221,7 @@
             this.Controls.Add(this.btnRemoveFromOrder);
             this.Controls.Add(this.btnAddToOrder);
             this.Name = "frmCustomerOrderForm";
-            this.Text = "frmCustomerOrderForm";
+            this.Text = "Customer Order Form";
             this.ResumeLayout(false);
             this.PerformLayout();
 
