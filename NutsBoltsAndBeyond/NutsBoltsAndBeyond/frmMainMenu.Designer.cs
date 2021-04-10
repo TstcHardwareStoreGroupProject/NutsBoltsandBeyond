@@ -1,7 +1,7 @@
 ﻿
 namespace NutsBoltsAndBeyond
 {
-    partial class frmMain
+    partial class frmMainMenu
     {
         /// <summary>
         /// Required designer variable.

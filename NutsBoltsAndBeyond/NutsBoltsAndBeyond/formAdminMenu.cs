@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace NutsBoltsAndBeyond
 {
-    public partial class frmMain : Form
+    public partial class formAdminMenu : Form
     {
-        public frmMain()
+        public formAdminMenu()
         {
             InitializeComponent();
-            ProgOps.ConnectDB();
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
     }
 }
