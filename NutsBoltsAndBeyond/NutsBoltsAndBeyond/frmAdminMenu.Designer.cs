@@ -1,7 +1,7 @@
 ﻿
 namespace NutsBoltsAndBeyond
 {
-    partial class formAdminMenu
+    partial class frmAdminMenu
     {
         /// <summary>
         /// Required designer variable.

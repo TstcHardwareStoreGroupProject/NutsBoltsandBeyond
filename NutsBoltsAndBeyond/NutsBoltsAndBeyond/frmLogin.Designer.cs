@@ -103,6 +103,7 @@ namespace NutsBoltsAndBeyond
             this.btnSignUp.TabIndex = 6;
             this.btnSignUp.Text = "&SIGN UP";
             this.btnSignUp.UseVisualStyleBackColor = true;
+            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
             // btnReset
             // 
@@ -112,6 +113,7 @@ namespace NutsBoltsAndBeyond
             this.btnReset.TabIndex = 7;
             this.btnReset.Text = "&RESET PASSWORD";
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // label4
             // 

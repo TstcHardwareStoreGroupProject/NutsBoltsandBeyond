@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace NutsBoltsAndBeyond
 {
-    public partial class formAdminMenu : Form
+    public partial class frmReset : Form
     {
-        public formAdminMenu()
+        public frmReset()
         {
             InitializeComponent();
         }

@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="formAdminMenu.cs">
+    <Compile Include="frmAdminMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formAdminMenu.Designer.cs">
-      <DependentUpon>formAdminMenu.cs</DependentUpon>
+    <Compile Include="frmAdminMenu.Designer.cs">
+      <DependentUpon>frmAdminMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="frmEmployeeMenu.cs">
       <SubType>Form</SubType>
@@ -70,6 +70,12 @@
     <Compile Include="frmMainMenu.Designer.cs">
       <DependentUpon>frmMainMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReset.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReset.Designer.cs">
+      <DependentUpon>frmReset.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSignup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMainMenu.resx">
       <DependentUpon>frmMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReset.resx">
+      <DependentUpon>frmReset.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSignup.resx">
       <DependentUpon>frmSignup.cs</DependentUpon>

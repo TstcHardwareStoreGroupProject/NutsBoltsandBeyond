@@ -29,6 +29,18 @@ namespace NutsBoltsAndBeyond
             Application.Exit();
         }
 
+        private void btnSignUp_Click(object sender, EventArgs e)
+        {
+            frmSignup signup = new frmSignup();
+            signup.Show();
+            this.Hide();
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+
+        }
+
         public bool flag = false;
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -60,7 +72,7 @@ namespace NutsBoltsAndBeyond
                             //Check credentials against DB
                             if (password == pwCheck)
                             {
-                                MessageBox.Show("Welcome to Nuts, Bolts, and Beyond, " + user, "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                                MessageBox.Show("Welcome to Nuts Bolts and Beyond, " + user, "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
                                 //Determine form to open based on access level
                                 switch (access)
@@ -109,18 +121,15 @@ namespace NutsBoltsAndBeyond
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            // loads datatable on load 
+            // loads datatable on load; Query will be global on normalization
+            String query = "SELECT * FROM GROUP1SP212330.USERS";
             dt = new DataTable();
-
-            String query = "SELECT * FROM GROUP1SP212330.MANAGERS";
-            
 
             //TODO: Rigged for data normalization... to be fixed...
             ProgOps._daRes = new SqlDataAdapter(query, ProgOps._dbConnect);
             ProgOps._daRes.Fill(dt);
 
             ProgOps.CloseDB();
-            //Further data normalization needed
         }
     }
 }

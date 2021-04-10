@@ -23,8 +23,8 @@ namespace NutsBoltsAndBeyond
             try
             {
                 if (_dbConnect.State == ConnectionState.Closed) _dbConnect.Open();
-                // For test only
-                MessageBox.Show("Connection Successful", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                // Not for production
+                //MessageBox.Show("Connection Successful", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
             }
             catch (Exception ex)
@@ -53,6 +53,21 @@ namespace NutsBoltsAndBeyond
         public static DataTable ProductsTable;
         public static DataTable OrdersTable;
         public static DataTable OrderCartTable;
+
+        #endregion
+
+        #region Load Methods
+
+        public static void LoadUsers(DataTable _dt, String _query)
+        {
+            _dt = new DataTable();
+
+            //TODO: Rigged for data normalization... to be fixed...
+            ProgOps._daRes = new SqlDataAdapter(_query, _dbConnect);
+            ProgOps._daRes.Fill(_dt);
+
+            ProgOps.CloseDB();
+        }
 
         #endregion
 
@@ -98,26 +113,28 @@ namespace NutsBoltsAndBeyond
         *   @param: _managerid, _fname, _lname, _address, _zip, _phone
         *   @return: void
         */
-        public static void _saveManager(int _managerid, String
-            _fname, String _lname, String _address, String _zip, String _phone)
+        public static void _saveUser(String
+            _fname, String _lname, String _username, String _password, String _designation)
         {
             String upd;
 
-            _managerid = Utils._IDGenerator();
+            int _id = Utils._IDGenerator();
 
             using (_cntDatabase = new SqlConnection(Utils.CONNECT_STRING))
             {
                 _cntDatabase.Open();
-                upd = "INSERT INTO GROUP1SP212330.MANAGERS ";
-                upd += "VALUES(@MANAGERID, @FNAME, @LNAME, @ADDRESS, @ZIP, @PHONE)";
+
+                upd = "INSERT INTO GROUP1SP212330.USERS ";
+                upd += "VALUES(@USER_ID, @FNAME, @LNAME, @USERNAME, @PASSWORD, @DESIGNATION);";
+
                 using (var cmd = new SqlCommand(upd, _cntDatabase))
                 {
-                    cmd.Parameters.AddWithValue("MANAGERID", _managerid);
+                    cmd.Parameters.AddWithValue("@USER_ID", _id);
                     cmd.Parameters.AddWithValue("@FNAME", _fname);
                     cmd.Parameters.AddWithValue("@LNAME", _lname);
-                    cmd.Parameters.AddWithValue("@ADDRESS", _address);
-                    cmd.Parameters.AddWithValue("@ZIP", _zip);
-                    cmd.Parameters.AddWithValue("@PHONE", _phone);
+                    cmd.Parameters.AddWithValue("@USERNAME", _username);
+                    cmd.Parameters.AddWithValue("@PASSWORD", _password);
+                    cmd.Parameters.AddWithValue("@DESIGNATION", _designation);
 
                     cmd.ExecuteNonQuery();
                 }
