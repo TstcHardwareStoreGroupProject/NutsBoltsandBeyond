@@ -61,7 +61,8 @@ namespace NutsBoltsAndBeyond
 
             if (userExist == false)
             {
-                ProgOps._saveUser(firstName, lastName, username, password, designation);
+                int id = 0;
+                ProgOps._saveUser(id, firstName, lastName, username, password, designation);
                 ProgOps.CloseDB();
                 SetDefaults();
                 MessageBox.Show("Account Created Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

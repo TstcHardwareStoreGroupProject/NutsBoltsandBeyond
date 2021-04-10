@@ -9,3 +9,5 @@ D:\Documents\TSTC\Comp Software Proj PlanDesig (INEW-2330-10Z1)\NutsBoltsandBeyo
 D:\Documents\TSTC\Comp Software Proj PlanDesig (INEW-2330-10Z1)\NutsBoltsandBeyond\NutsBoltsAndBeyond\NutsBoltsAndBeyond\obj\Debug\NutsBoltsAndBeyond.csproj.CoreCompileInputs.cache
 D:\Documents\TSTC\Comp Software Proj PlanDesig (INEW-2330-10Z1)\NutsBoltsandBeyond\NutsBoltsAndBeyond\NutsBoltsAndBeyond\obj\Debug\NutsBoltsAndBeyond.exe
 D:\Documents\TSTC\Comp Software Proj PlanDesig (INEW-2330-10Z1)\NutsBoltsandBeyond\NutsBoltsAndBeyond\NutsBoltsAndBeyond\obj\Debug\NutsBoltsAndBeyond.pdb
+D:\Documents\TSTC\Comp Software Proj PlanDesig (INEW-2330-10Z1)\NutsBoltsandBeyond\NutsBoltsAndBeyond\NutsBoltsAndBeyond\obj\Debug\NutsBoltsAndBeyond.csprojAssemblyReference.cache
+D:\Documents\TSTC\Comp Software Proj PlanDesig (INEW-2330-10Z1)\NutsBoltsandBeyond\NutsBoltsAndBeyond\NutsBoltsAndBeyond\obj\Debug\NutsBoltsAndBeyond.frmReset.resources

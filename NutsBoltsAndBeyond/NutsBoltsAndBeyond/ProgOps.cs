@@ -113,12 +113,12 @@ namespace NutsBoltsAndBeyond
         *   @param: _managerid, _fname, _lname, _address, _zip, _phone
         *   @return: void
         */
-        public static void _saveUser(String
+        public static void _saveUser(int _id, String
             _fname, String _lname, String _username, String _password, String _designation)
         {
             String upd;
 
-            int _id = Utils._IDGenerator();
+            _id = Utils._IDGenerator();
 
             using (_cntDatabase = new SqlConnection(Utils.CONNECT_STRING))
             {
@@ -297,6 +297,46 @@ namespace NutsBoltsAndBeyond
                 }
                 CloseDB();
             }
+        }
+
+        #endregion
+
+        #region Update Methods
+
+        public static bool _updateUser(int _id, String
+            _fname, String _lname, String _username, String _password, String _designation)
+        {
+            String upd;
+            bool flag = false;
+            try
+            {
+                using (_cntDatabase = new SqlConnection(Utils.CONNECT_STRING))
+                {
+                    _cntDatabase.Open();
+                    upd = "UPDATE GROUP1SP212330.USERS ";
+                    upd += "SET FNAME = @FNAME, LNAME = @LNAME, " +
+                        "USERNAME = @USERNAME, PASSWORD = @PASSWORD, DESIGNATION = @DESIGNATION ";
+                    upd += "WHERE USER_ID = @USER_ID";
+                    using (var cmd = new SqlCommand(upd, _cntDatabase))
+                    {
+                        cmd.Parameters.AddWithValue("@USER_ID", _id);
+                        cmd.Parameters.AddWithValue("@FNAME", _fname);
+                        cmd.Parameters.AddWithValue("@LNAME", _lname);
+                        cmd.Parameters.AddWithValue("@USERNAME", _username);
+                        cmd.Parameters.AddWithValue("@PASSWORD", _password);
+                        cmd.Parameters.AddWithValue("@DESIGNATION", _designation);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                    flag = true;
+                    CloseDB();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return flag;
         }
 
         #endregion

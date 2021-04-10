@@ -38,7 +38,9 @@ namespace NutsBoltsAndBeyond
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-
+            frmReset reset = new frmReset();
+            reset.Show();
+            this.Hide();
         }
 
         public bool flag = false;
