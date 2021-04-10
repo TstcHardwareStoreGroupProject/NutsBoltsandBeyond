@@ -79,7 +79,7 @@ namespace NutsBoltsAndBeyond
                                 //Determine form to open based on access level
                                 switch (access)
                                 {
-                                    case "Patron":
+                                    case "Customer":
                                         frmMainMenu main = new frmMainMenu();
                                         this.Hide();
                                         main.ShowDialog();
