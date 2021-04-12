@@ -41,7 +41,9 @@ namespace NutsBoltsAndBeyond
 
         private void btnStock_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("COMING SOON", "UNDER CONSTRUCTION", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            frmInventory inv = new frmInventory();
+            inv.Show();
+            this.Hide();
         }
     }
 }
