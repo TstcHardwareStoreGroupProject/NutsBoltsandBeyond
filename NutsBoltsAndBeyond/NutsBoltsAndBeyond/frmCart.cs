@@ -55,5 +55,30 @@ namespace NutsBoltsAndBeyond
             shop.Show();
             this.Close();
         }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            if (dgvCart.Rows.Count > 1)
+            {
+                int selected = dgvCart.CurrentCell.RowIndex;
+
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to remove this item?", "Are you sure", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    dgvCart.Rows.RemoveAt(selected);
+                    MessageBox.Show("Item added successfully removed from the cart!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Please select an item and try again", "There was a problem...", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnCheckout_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Checkout Successful... I know, we're working on it...", "Success, kinda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

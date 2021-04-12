@@ -20,7 +20,6 @@ namespace NutsBoltsAndBeyond
         {
             ShopTable = new DataTable();
             ProgOps.CartTable = new DataTable();
-
             ProgOps.CartTable.Columns.Add("SKU", typeof(int));
             ProgOps.CartTable.Columns.Add("ITEM", typeof(String));
             ProgOps.CartTable.Columns.Add("PRICE", typeof(String));

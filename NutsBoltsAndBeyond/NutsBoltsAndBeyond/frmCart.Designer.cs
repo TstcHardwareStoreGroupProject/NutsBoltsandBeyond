@@ -53,12 +53,13 @@ namespace NutsBoltsAndBeyond
             this.dgvCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCart.Location = new System.Drawing.Point(12, 12);
             this.dgvCart.Name = "dgvCart";
+            this.dgvCart.ReadOnly = true;
             this.dgvCart.Size = new System.Drawing.Size(560, 200);
             this.dgvCart.TabIndex = 1;
             // 
             // btnShop
             // 
-            this.btnShop.Location = new System.Drawing.Point(366, 228);
+            this.btnShop.Location = new System.Drawing.Point(346, 228);
             this.btnShop.Name = "btnShop";
             this.btnShop.Size = new System.Drawing.Size(100, 23);
             this.btnShop.TabIndex = 6;
@@ -68,21 +69,23 @@ namespace NutsBoltsAndBeyond
             // 
             // btnCheckout
             // 
-            this.btnCheckout.Location = new System.Drawing.Point(260, 228);
+            this.btnCheckout.Location = new System.Drawing.Point(240, 228);
             this.btnCheckout.Name = "btnCheckout";
             this.btnCheckout.Size = new System.Drawing.Size(100, 23);
             this.btnCheckout.TabIndex = 7;
             this.btnCheckout.Text = "&CHECKOUT";
             this.btnCheckout.UseVisualStyleBackColor = true;
+            this.btnCheckout.Click += new System.EventHandler(this.btnCheckout_Click);
             // 
             // btnRemove
             // 
-            this.btnRemove.Location = new System.Drawing.Point(154, 228);
+            this.btnRemove.Location = new System.Drawing.Point(134, 228);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(100, 23);
             this.btnRemove.TabIndex = 8;
             this.btnRemove.Text = "&REMOVE ITEM";
             this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // frmCart
             // 
