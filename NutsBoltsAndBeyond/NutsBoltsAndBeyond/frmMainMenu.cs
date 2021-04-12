@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace NutsBoltsAndBeyond
 {
-    public partial class frmMain : Form
+    public partial class frmMainMenu : Form
     {
-        public frmMain()
+        public frmMainMenu()
         {
             InitializeComponent();
             ProgOps.ConnectDB();
@@ -21,6 +21,18 @@ namespace NutsBoltsAndBeyond
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnShop_Click(object sender, EventArgs e)
+        {
+            frmShop shop = new frmShop();
+            shop.Show();
+            this.Close();
+        }
+
+        private void btnAcct_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("COMING SOON", "UNDER CONSTRUCTION", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }
