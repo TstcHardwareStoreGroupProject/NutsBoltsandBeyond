@@ -53,7 +53,7 @@ namespace NutsBoltsAndBeyond
             this.btnLogin.Location = new System.Drawing.Point(250, 177);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(100, 25);
-            this.btnLogin.TabIndex = 1;
+            this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "&LOGIN";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -65,7 +65,7 @@ namespace NutsBoltsAndBeyond
             this.lblTitle.Location = new System.Drawing.Point(31, 25);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(516, 44);
-            this.lblTitle.TabIndex = 2;
+            this.lblTitle.TabIndex = 6;
             this.lblTitle.Text = "NUTS BOLTS AND BEYOND";
             // 
             // lblUName
@@ -75,7 +75,7 @@ namespace NutsBoltsAndBeyond
             this.lblUName.Location = new System.Drawing.Point(167, 96);
             this.lblUName.Name = "lblUName";
             this.lblUName.Size = new System.Drawing.Size(66, 14);
-            this.lblUName.TabIndex = 3;
+            this.lblUName.TabIndex = 7;
             this.lblUName.Text = "USERNAME:";
             // 
             // lblPass
@@ -85,7 +85,7 @@ namespace NutsBoltsAndBeyond
             this.lblPass.Location = new System.Drawing.Point(167, 138);
             this.lblPass.Name = "lblPass";
             this.lblPass.Size = new System.Drawing.Size(69, 14);
-            this.lblPass.TabIndex = 5;
+            this.lblPass.TabIndex = 8;
             this.lblPass.Text = "PASSWORD:";
             // 
             // tbxPassword
@@ -93,14 +93,14 @@ namespace NutsBoltsAndBeyond
             this.tbxPassword.Location = new System.Drawing.Point(250, 132);
             this.tbxPassword.Name = "tbxPassword";
             this.tbxPassword.Size = new System.Drawing.Size(180, 20);
-            this.tbxPassword.TabIndex = 4;
+            this.tbxPassword.TabIndex = 1;
             // 
             // btnSignUp
             // 
             this.btnSignUp.Location = new System.Drawing.Point(250, 242);
             this.btnSignUp.Name = "btnSignUp";
             this.btnSignUp.Size = new System.Drawing.Size(100, 25);
-            this.btnSignUp.TabIndex = 6;
+            this.btnSignUp.TabIndex = 3;
             this.btnSignUp.Text = "&SIGN UP";
             this.btnSignUp.UseVisualStyleBackColor = true;
             this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
@@ -110,7 +110,7 @@ namespace NutsBoltsAndBeyond
             this.btnReset.Location = new System.Drawing.Point(12, 306);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(100, 43);
-            this.btnReset.TabIndex = 7;
+            this.btnReset.TabIndex = 4;
             this.btnReset.Text = "&RESET PASSWORD";
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
@@ -121,7 +121,7 @@ namespace NutsBoltsAndBeyond
             this.label4.Location = new System.Drawing.Point(234, 225);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(137, 14);
-            this.label4.TabIndex = 8;
+            this.label4.TabIndex = 9;
             this.label4.Text = "Dont have an account yet?";
             // 
             // btnExit
@@ -129,7 +129,7 @@ namespace NutsBoltsAndBeyond
             this.btnExit.Location = new System.Drawing.Point(472, 324);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(100, 25);
-            this.btnExit.TabIndex = 9;
+            this.btnExit.TabIndex = 5;
             this.btnExit.Text = "E&XIT";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
