@@ -31,7 +31,6 @@ namespace NutsBoltsAndBeyond
         {
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblDesig = new System.Windows.Forms.Label();
-            this.btnShop = new System.Windows.Forms.Button();
             this.btnStock = new System.Windows.Forms.Button();
             this.btnCus = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
@@ -57,19 +56,9 @@ namespace NutsBoltsAndBeyond
             this.lblDesig.TabIndex = 5;
             this.lblDesig.Text = "(EMPLOYEE)";
             // 
-            // btnShop
-            // 
-            this.btnShop.Location = new System.Drawing.Point(250, 100);
-            this.btnShop.Name = "btnShop";
-            this.btnShop.Size = new System.Drawing.Size(100, 25);
-            this.btnShop.TabIndex = 6;
-            this.btnShop.Text = "&SHOP";
-            this.btnShop.UseVisualStyleBackColor = true;
-            this.btnShop.Click += new System.EventHandler(this.btnShop_Click);
-            // 
             // btnStock
             // 
-            this.btnStock.Location = new System.Drawing.Point(250, 201);
+            this.btnStock.Location = new System.Drawing.Point(250, 165);
             this.btnStock.Name = "btnStock";
             this.btnStock.Size = new System.Drawing.Size(100, 50);
             this.btnStock.TabIndex = 8;
@@ -79,7 +68,7 @@ namespace NutsBoltsAndBeyond
             // 
             // btnCus
             // 
-            this.btnCus.Location = new System.Drawing.Point(250, 145);
+            this.btnCus.Location = new System.Drawing.Point(250, 109);
             this.btnCus.Name = "btnCus";
             this.btnCus.Size = new System.Drawing.Size(100, 50);
             this.btnCus.TabIndex = 9;
@@ -93,7 +82,7 @@ namespace NutsBoltsAndBeyond
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(100, 25);
             this.btnExit.TabIndex = 10;
-            this.btnExit.Text = "E&XIT";
+            this.btnExit.Text = "&LOGOUT";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -105,7 +94,6 @@ namespace NutsBoltsAndBeyond
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnCus);
             this.Controls.Add(this.btnStock);
-            this.Controls.Add(this.btnShop);
             this.Controls.Add(this.lblDesig);
             this.Controls.Add(this.lblTitle);
             this.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -121,7 +109,6 @@ namespace NutsBoltsAndBeyond
 
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblDesig;
-        private System.Windows.Forms.Button btnShop;
         private System.Windows.Forms.Button btnStock;
         private System.Windows.Forms.Button btnCus;
         private System.Windows.Forms.Button btnExit;
