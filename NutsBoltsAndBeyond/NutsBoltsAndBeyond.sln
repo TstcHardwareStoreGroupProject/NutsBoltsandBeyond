@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NutsBoltsAndBeyond", "NutsBoltsAndBeyond\NutsBoltsAndBeyond.csproj", "{6A7B26E1-064D-4191-B855-6225CE1E0341}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Nuts Bolts and Beyond", "Nuts Bolts and Beyond\Nuts Bolts and Beyond.vdproj", "{0801FE33-0B74-4706-9D50-B816815A8F63}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Nuts Bolts And Beyond", "Nuts Bolts And Beyond\Nuts Bolts And Beyond.vdproj", "{CE953867-77F0-46B7-A2EC-9B46BC8BB728}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +17,8 @@ Global
 		{6A7B26E1-064D-4191-B855-6225CE1E0341}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A7B26E1-064D-4191-B855-6225CE1E0341}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A7B26E1-064D-4191-B855-6225CE1E0341}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0801FE33-0B74-4706-9D50-B816815A8F63}.Debug|Any CPU.ActiveCfg = Debug
-		{0801FE33-0B74-4706-9D50-B816815A8F63}.Release|Any CPU.ActiveCfg = Release
+		{CE953867-77F0-46B7-A2EC-9B46BC8BB728}.Debug|Any CPU.ActiveCfg = Debug
+		{CE953867-77F0-46B7-A2EC-9B46BC8BB728}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

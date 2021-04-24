@@ -82,7 +82,7 @@ namespace NutsBoltsAndBeyond
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(100, 25);
             this.btnExit.TabIndex = 10;
-            this.btnExit.Text = "E&XIT";
+            this.btnExit.Text = "&LOGOUT";
             this.btnExit.UseVisualStyleBackColor = true;
             // 
             // frmMainMenu

@@ -29,7 +29,6 @@ namespace NutsBoltsAndBeyond
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnShop = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblDesig = new System.Windows.Forms.Label();
             this.btnEmp = new System.Windows.Forms.Button();
@@ -37,16 +36,6 @@ namespace NutsBoltsAndBeyond
             this.btnStock = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnShop
-            // 
-            this.btnShop.Location = new System.Drawing.Point(250, 100);
-            this.btnShop.Name = "btnShop";
-            this.btnShop.Size = new System.Drawing.Size(100, 25);
-            this.btnShop.TabIndex = 2;
-            this.btnShop.Text = "&SHOP";
-            this.btnShop.UseVisualStyleBackColor = true;
-            this.btnShop.Click += new System.EventHandler(this.btnShop_Click);
             // 
             // lblTitle
             // 
@@ -70,7 +59,7 @@ namespace NutsBoltsAndBeyond
             // 
             // btnEmp
             // 
-            this.btnEmp.Location = new System.Drawing.Point(250, 145);
+            this.btnEmp.Location = new System.Drawing.Point(250, 103);
             this.btnEmp.Name = "btnEmp";
             this.btnEmp.Size = new System.Drawing.Size(100, 50);
             this.btnEmp.TabIndex = 5;
@@ -80,7 +69,7 @@ namespace NutsBoltsAndBeyond
             // 
             // btnCus
             // 
-            this.btnCus.Location = new System.Drawing.Point(250, 201);
+            this.btnCus.Location = new System.Drawing.Point(250, 159);
             this.btnCus.Name = "btnCus";
             this.btnCus.Size = new System.Drawing.Size(100, 50);
             this.btnCus.TabIndex = 6;
@@ -90,7 +79,7 @@ namespace NutsBoltsAndBeyond
             // 
             // btnStock
             // 
-            this.btnStock.Location = new System.Drawing.Point(250, 257);
+            this.btnStock.Location = new System.Drawing.Point(250, 215);
             this.btnStock.Name = "btnStock";
             this.btnStock.Size = new System.Drawing.Size(100, 50);
             this.btnStock.TabIndex = 7;
@@ -104,7 +93,7 @@ namespace NutsBoltsAndBeyond
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(100, 25);
             this.btnExit.TabIndex = 10;
-            this.btnExit.Text = "E&XIT";
+            this.btnExit.Text = "&LOGOUT";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -119,7 +108,6 @@ namespace NutsBoltsAndBeyond
             this.Controls.Add(this.btnEmp);
             this.Controls.Add(this.lblDesig);
             this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.btnShop);
             this.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmAdminMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -130,8 +118,6 @@ namespace NutsBoltsAndBeyond
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnShop;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblDesig;
         private System.Windows.Forms.Button btnEmp;

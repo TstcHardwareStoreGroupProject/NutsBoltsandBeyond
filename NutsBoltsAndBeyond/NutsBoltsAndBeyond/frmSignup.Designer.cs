@@ -45,6 +45,8 @@ namespace NutsBoltsAndBeyond
             this.btnSignUp = new System.Windows.Forms.Button();
             this.lblCfmPW = new System.Windows.Forms.Label();
             this.tbxCfmPW = new System.Windows.Forms.TextBox();
+            this.lblCode = new System.Windows.Forms.Label();
+            this.txtCode = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblFName
@@ -169,7 +171,7 @@ namespace NutsBoltsAndBeyond
             // 
             // btnSignUp
             // 
-            this.btnSignUp.Location = new System.Drawing.Point(258, 277);
+            this.btnSignUp.Location = new System.Drawing.Point(267, 326);
             this.btnSignUp.Name = "btnSignUp";
             this.btnSignUp.Size = new System.Drawing.Size(100, 23);
             this.btnSignUp.TabIndex = 17;
@@ -194,11 +196,28 @@ namespace NutsBoltsAndBeyond
             this.tbxCfmPW.Size = new System.Drawing.Size(180, 20);
             this.tbxCfmPW.TabIndex = 18;
             // 
+            // lblCode
+            // 
+            this.lblCode.Location = new System.Drawing.Point(116, 269);
+            this.lblCode.Name = "lblCode";
+            this.lblCode.Size = new System.Drawing.Size(129, 44);
+            this.lblCode.TabIndex = 20;
+            this.lblCode.Text = "IF ADMIN OR EMPLOYEE, ENTER ADMIN CODE GIVEN BY EMPLOYER";
+            // 
+            // txtCode
+            // 
+            this.txtCode.Location = new System.Drawing.Point(258, 269);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(180, 20);
+            this.txtCode.TabIndex = 21;
+            // 
             // frmSignup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 361);
+            this.Controls.Add(this.txtCode);
+            this.Controls.Add(this.lblCode);
             this.Controls.Add(this.lblCfmPW);
             this.Controls.Add(this.tbxCfmPW);
             this.Controls.Add(this.btnSignUp);
@@ -243,5 +262,7 @@ namespace NutsBoltsAndBeyond
         private System.Windows.Forms.Button btnSignUp;
         private System.Windows.Forms.Label lblCfmPW;
         private System.Windows.Forms.TextBox tbxCfmPW;
+        private System.Windows.Forms.Label lblCode;
+        private System.Windows.Forms.TextBox txtCode;
     }
 }

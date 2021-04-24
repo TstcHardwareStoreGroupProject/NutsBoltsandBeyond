@@ -20,7 +20,9 @@ namespace NutsBoltsAndBeyond
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            frmLogin login = new frmLogin();
+            login.Show();
+            this.Close();
         }
 
         private void btnShop_Click(object sender, EventArgs e)
