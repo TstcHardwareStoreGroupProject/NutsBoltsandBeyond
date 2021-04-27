@@ -21,8 +21,8 @@ namespace NutsBoltsAndBeyond
         }
 
         DataTable dt;
-        public static int user_id;
         String username, password;
+
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -66,19 +66,24 @@ namespace NutsBoltsAndBeyond
                         else
                         {
                             //Determine access level; access determines menu type to load
-                            ProgOps._access = dr.Field<String>("DESIGNATION") != null ? dr.Field<String>("DESIGNATION") : String.Empty;
-                            ProgOps._password = dr.Field<String>("PASSWORD") != null ? dr.Field<String>("PASSWORD") : String.Empty;
-                            String user = dr.Field<String>("FNAME") != null ? dr.Field<String>("FNAME") + " " + dr.Field<String>("LNAME") : String.Empty;
-                            ProgOps._email = dr.Field<String>("EMAIL") != null ? dr.Field<String>("EMAIL") : String.Empty;
-                            user_id = dr.Field<Int32>("USER_ID");
+                            ProgOps.currentUser.ID = dr.Field<int>("USER_ID");
+                            ProgOps.currentUser.Fname = dr.Field<String>("FNAME") != null ? dr.Field<String>("FNAME") : String.Empty;
+                            ProgOps.currentUser.Lname = dr.Field<String>("LNAME") != null ? dr.Field<String>("LNAME") : String.Empty;
+                            ProgOps.currentUser.Username = dr.Field<String>("USERNAME") != null ? dr.Field<String>("USERNAME") : String.Empty;
+                            ProgOps.currentUser.Password = dr.Field<String>("PASSWORD") != null ? dr.Field<String>("PASSWORD") : String.Empty;
+                            ProgOps.currentUser.Designation = dr.Field<String>("DESIGNATION") != null ? dr.Field<String>("DESIGNATION") : String.Empty;
+                            ProgOps.currentUser.Email = dr.Field<String>("EMAIL") != null ? dr.Field<String>("EMAIL") : String.Empty;
+
+                            String name = ProgOps.currentUser.Fname + " " + ProgOps.currentUser.Lname;
+
                             //Check credentials against DB
-                            if (password == ProgOps._password)
+                            if (password == ProgOps.currentUser.Password)
                             {
                                 flag = true;
-                                MessageBox.Show("Welcome to Nuts Bolts and Beyond, " + user, "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                                MessageBox.Show($"Welcome to Nuts Bolts and Beyond, {name}", "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
                                 //Determine form to open based on access level
-                                switch (ProgOps._access)
+                                switch (ProgOps.currentUser.Designation)
                                 {
                                     case "Customer":
                                         frmMainMenu main = new frmMainMenu();

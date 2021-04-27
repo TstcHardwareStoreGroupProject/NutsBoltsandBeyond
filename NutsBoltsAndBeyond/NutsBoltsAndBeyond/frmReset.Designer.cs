@@ -35,7 +35,7 @@ namespace NutsBoltsAndBeyond
             this.btnBack = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.lblPassword = new System.Windows.Forms.Label();
-            this.tbxPassword = new System.Windows.Forms.TextBox();
+            this.tbxUsername = new System.Windows.Forms.TextBox();
             this.btnValidate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -53,7 +53,7 @@ namespace NutsBoltsAndBeyond
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(248, 89);
+            this.lblEmail.Location = new System.Drawing.Point(248, 133);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(108, 14);
             this.lblEmail.TabIndex = 11;
@@ -61,7 +61,7 @@ namespace NutsBoltsAndBeyond
             // 
             // tbxEmail
             // 
-            this.tbxEmail.Location = new System.Drawing.Point(211, 106);
+            this.tbxEmail.Location = new System.Drawing.Point(208, 150);
             this.tbxEmail.Name = "tbxEmail";
             this.tbxEmail.Size = new System.Drawing.Size(180, 20);
             this.tbxEmail.TabIndex = 10;
@@ -90,18 +90,18 @@ namespace NutsBoltsAndBeyond
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(234, 139);
+            this.lblPassword.Location = new System.Drawing.Point(228, 81);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(137, 14);
+            this.lblPassword.Size = new System.Drawing.Size(134, 14);
             this.lblPassword.TabIndex = 20;
-            this.lblPassword.Text = "ENTER YOUR PASSWORD:";
+            this.lblPassword.Text = "ENTER YOUR USERNAME:";
             // 
-            // tbxPassword
+            // tbxUsername
             // 
-            this.tbxPassword.Location = new System.Drawing.Point(211, 156);
-            this.tbxPassword.Name = "tbxPassword";
-            this.tbxPassword.Size = new System.Drawing.Size(180, 20);
-            this.tbxPassword.TabIndex = 19;
+            this.tbxUsername.Location = new System.Drawing.Point(208, 98);
+            this.tbxUsername.Name = "tbxUsername";
+            this.tbxUsername.Size = new System.Drawing.Size(180, 20);
+            this.tbxUsername.TabIndex = 19;
             // 
             // btnValidate
             // 
@@ -120,7 +120,7 @@ namespace NutsBoltsAndBeyond
             this.ClientSize = new System.Drawing.Size(584, 361);
             this.Controls.Add(this.btnValidate);
             this.Controls.Add(this.lblPassword);
-            this.Controls.Add(this.tbxPassword);
+            this.Controls.Add(this.tbxUsername);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblEmail);
@@ -144,7 +144,7 @@ namespace NutsBoltsAndBeyond
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.TextBox tbxPassword;
+        private System.Windows.Forms.TextBox tbxUsername;
         private System.Windows.Forms.Button btnValidate;
     }
 }

@@ -46,14 +46,16 @@ namespace NutsBoltsAndBeyond
             this.lblCfmPW = new System.Windows.Forms.Label();
             this.tbxCfmPW = new System.Windows.Forms.TextBox();
             this.lblCode = new System.Windows.Forms.Label();
-            this.txtCode = new System.Windows.Forms.TextBox();
+            this.tbxCode = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbxEmail = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblFName
             // 
             this.lblFName.AutoSize = true;
             this.lblFName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFName.Location = new System.Drawing.Point(175, 111);
+            this.lblFName.Location = new System.Drawing.Point(161, 81);
             this.lblFName.Name = "lblFName";
             this.lblFName.Size = new System.Drawing.Size(70, 14);
             this.lblFName.TabIndex = 5;
@@ -61,7 +63,7 @@ namespace NutsBoltsAndBeyond
             // 
             // tbxFName
             // 
-            this.tbxFName.Location = new System.Drawing.Point(258, 105);
+            this.tbxFName.Location = new System.Drawing.Point(244, 75);
             this.tbxFName.Name = "tbxFName";
             this.tbxFName.Size = new System.Drawing.Size(180, 20);
             this.tbxFName.TabIndex = 4;
@@ -70,7 +72,7 @@ namespace NutsBoltsAndBeyond
             // 
             this.lblLName.AutoSize = true;
             this.lblLName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLName.Location = new System.Drawing.Point(175, 137);
+            this.lblLName.Location = new System.Drawing.Point(161, 107);
             this.lblLName.Name = "lblLName";
             this.lblLName.Size = new System.Drawing.Size(69, 14);
             this.lblLName.TabIndex = 7;
@@ -78,7 +80,7 @@ namespace NutsBoltsAndBeyond
             // 
             // tbxLName
             // 
-            this.tbxLName.Location = new System.Drawing.Point(258, 131);
+            this.tbxLName.Location = new System.Drawing.Point(244, 101);
             this.tbxLName.Name = "tbxLName";
             this.tbxLName.Size = new System.Drawing.Size(180, 20);
             this.tbxLName.TabIndex = 6;
@@ -87,7 +89,7 @@ namespace NutsBoltsAndBeyond
             // 
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(175, 163);
+            this.lblUsername.Location = new System.Drawing.Point(161, 133);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(66, 14);
             this.lblUsername.TabIndex = 9;
@@ -95,7 +97,7 @@ namespace NutsBoltsAndBeyond
             // 
             // tbxUsername
             // 
-            this.tbxUsername.Location = new System.Drawing.Point(258, 157);
+            this.tbxUsername.Location = new System.Drawing.Point(244, 127);
             this.tbxUsername.Name = "tbxUsername";
             this.tbxUsername.Size = new System.Drawing.Size(180, 20);
             this.tbxUsername.TabIndex = 8;
@@ -104,7 +106,7 @@ namespace NutsBoltsAndBeyond
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(175, 189);
+            this.lblPassword.Location = new System.Drawing.Point(161, 159);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(69, 14);
             this.lblPassword.TabIndex = 11;
@@ -112,7 +114,7 @@ namespace NutsBoltsAndBeyond
             // 
             // tbxPassword
             // 
-            this.tbxPassword.Location = new System.Drawing.Point(258, 183);
+            this.tbxPassword.Location = new System.Drawing.Point(244, 153);
             this.tbxPassword.Name = "tbxPassword";
             this.tbxPassword.Size = new System.Drawing.Size(180, 20);
             this.tbxPassword.TabIndex = 10;
@@ -141,7 +143,7 @@ namespace NutsBoltsAndBeyond
             // 
             this.lblDesig.AutoSize = true;
             this.lblDesig.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDesig.Location = new System.Drawing.Point(164, 243);
+            this.lblDesig.Location = new System.Drawing.Point(150, 239);
             this.lblDesig.Name = "lblDesig";
             this.lblDesig.Size = new System.Drawing.Size(77, 14);
             this.lblDesig.TabIndex = 14;
@@ -154,7 +156,7 @@ namespace NutsBoltsAndBeyond
             "Customer",
             "Employee",
             "Admin"});
-            this.cbxDesig.Location = new System.Drawing.Point(258, 235);
+            this.cbxDesig.Location = new System.Drawing.Point(244, 231);
             this.cbxDesig.Name = "cbxDesig";
             this.cbxDesig.Size = new System.Drawing.Size(180, 22);
             this.cbxDesig.TabIndex = 15;
@@ -183,7 +185,7 @@ namespace NutsBoltsAndBeyond
             // 
             this.lblCfmPW.AutoSize = true;
             this.lblCfmPW.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCfmPW.Location = new System.Drawing.Point(124, 215);
+            this.lblCfmPW.Location = new System.Drawing.Point(110, 185);
             this.lblCfmPW.Name = "lblCfmPW";
             this.lblCfmPW.Size = new System.Drawing.Size(117, 14);
             this.lblCfmPW.TabIndex = 19;
@@ -191,32 +193,51 @@ namespace NutsBoltsAndBeyond
             // 
             // tbxCfmPW
             // 
-            this.tbxCfmPW.Location = new System.Drawing.Point(258, 209);
+            this.tbxCfmPW.Location = new System.Drawing.Point(244, 179);
             this.tbxCfmPW.Name = "tbxCfmPW";
             this.tbxCfmPW.Size = new System.Drawing.Size(180, 20);
             this.tbxCfmPW.TabIndex = 18;
             // 
             // lblCode
             // 
-            this.lblCode.Location = new System.Drawing.Point(116, 269);
+            this.lblCode.Location = new System.Drawing.Point(102, 259);
             this.lblCode.Name = "lblCode";
             this.lblCode.Size = new System.Drawing.Size(129, 44);
             this.lblCode.TabIndex = 20;
             this.lblCode.Text = "IF ADMIN OR EMPLOYEE, ENTER ADMIN CODE GIVEN BY EMPLOYER";
             // 
-            // txtCode
+            // tbxCode
             // 
-            this.txtCode.Location = new System.Drawing.Point(258, 269);
-            this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(180, 20);
-            this.txtCode.TabIndex = 21;
+            this.tbxCode.Location = new System.Drawing.Point(244, 259);
+            this.tbxCode.Name = "tbxCode";
+            this.tbxCode.Size = new System.Drawing.Size(180, 20);
+            this.tbxCode.TabIndex = 21;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(187, 211);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 14);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "EMAIL:";
+            // 
+            // tbxEmail
+            // 
+            this.tbxEmail.Location = new System.Drawing.Point(244, 205);
+            this.tbxEmail.Name = "tbxEmail";
+            this.tbxEmail.Size = new System.Drawing.Size(180, 20);
+            this.tbxEmail.TabIndex = 22;
             // 
             // frmSignup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 361);
-            this.Controls.Add(this.txtCode);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.tbxEmail);
+            this.Controls.Add(this.tbxCode);
             this.Controls.Add(this.lblCode);
             this.Controls.Add(this.lblCfmPW);
             this.Controls.Add(this.tbxCfmPW);
@@ -263,6 +284,8 @@ namespace NutsBoltsAndBeyond
         private System.Windows.Forms.Label lblCfmPW;
         private System.Windows.Forms.TextBox tbxCfmPW;
         private System.Windows.Forms.Label lblCode;
-        private System.Windows.Forms.TextBox txtCode;
+        private System.Windows.Forms.TextBox tbxCode;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tbxEmail;
     }
 }

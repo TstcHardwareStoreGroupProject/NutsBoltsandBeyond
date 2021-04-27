@@ -45,7 +45,10 @@ namespace NutsBoltsAndBeyond
 
         public static DataTable CartTable;
 
-        public static String _access, _email, _username, _password;
+        public static String rng;
+
+        public static Models.UserModel resetUser = new Models.UserModel();
+        public static Models.UserModel currentUser = new Models.UserModel();
 
         #endregion
 
@@ -103,31 +106,31 @@ namespace NutsBoltsAndBeyond
 
         /*
         *   Insert Manager model to DB        
-        *   @param: _managerid, _fname, _lname, _address, _zip, _phone
+        *   @param: Models.UserModel
         *   @return: void
         */
-        public static void _saveUser(int _id, String
-            _fname, String _lname, String _username, String _password, String _designation)
+        public static void _saveUser(Models.UserModel _user)
         {
             String upd;
 
-            _id = Utils._IDGenerator();
+            _user.ID = Utils._IDGenerator();
 
             using (_cntDatabase = new SqlConnection(Utils.CONNECT_STRING))
             {
                 _cntDatabase.Open();
 
                 upd = "INSERT INTO GROUP1SP212330.USERS ";
-                upd += "VALUES(@USER_ID, @FNAME, @LNAME, @USERNAME, @PASSWORD, @DESIGNATION);";
+                upd += "VALUES(@USER_ID, @FNAME, @LNAME, @USERNAME, @PASSWORD, @DESIGNATION, @EMAIL);";
 
                 using (var cmd = new SqlCommand(upd, _cntDatabase))
                 {
-                    cmd.Parameters.AddWithValue("@USER_ID", _id);
-                    cmd.Parameters.AddWithValue("@FNAME", _fname);
-                    cmd.Parameters.AddWithValue("@LNAME", _lname);
-                    cmd.Parameters.AddWithValue("@USERNAME", _username);
-                    cmd.Parameters.AddWithValue("@PASSWORD", _password);
-                    cmd.Parameters.AddWithValue("@DESIGNATION", _designation);
+                    cmd.Parameters.AddWithValue("@USER_ID", _user.ID);
+                    cmd.Parameters.AddWithValue("@FNAME", _user.Fname);
+                    cmd.Parameters.AddWithValue("@LNAME", _user.Lname);
+                    cmd.Parameters.AddWithValue("@USERNAME", _user.Username);
+                    cmd.Parameters.AddWithValue("@PASSWORD", _user.Password);
+                    cmd.Parameters.AddWithValue("@DESIGNATION", _user.Designation);
+                    cmd.Parameters.AddWithValue("@EMAIL", _user.Email);
 
                     cmd.ExecuteNonQuery();
                 }
@@ -203,7 +206,7 @@ namespace NutsBoltsAndBeyond
         #region Update Methods
 
         public static bool _updateUser(int _id, String
-            _fname, String _lname, String _username, String _password, String _designation)
+            _fname, String _lname, String _username, String _password, String _designation, String _email)
         {
             String upd;
             bool flag = false;
@@ -214,7 +217,7 @@ namespace NutsBoltsAndBeyond
                     _cntDatabase.Open();
                     upd = "UPDATE GROUP1SP212330.USERS ";
                     upd += "SET FNAME = @FNAME, LNAME = @LNAME, " +
-                        "USERNAME = @USERNAME, PASSWORD = @PASSWORD, DESIGNATION = @DESIGNATION ";
+                        "USERNAME = @USERNAME, PASSWORD = @PASSWORD, DESIGNATION = @DESIGNATION, EMAIL = @EMAIL";
                     upd += "WHERE USER_ID = @USER_ID";
                     using (var cmd = new SqlCommand(upd, _cntDatabase))
                     {
@@ -224,6 +227,7 @@ namespace NutsBoltsAndBeyond
                         cmd.Parameters.AddWithValue("@USERNAME", _username);
                         cmd.Parameters.AddWithValue("@PASSWORD", _password);
                         cmd.Parameters.AddWithValue("@DESIGNATION", _designation);
+                        cmd.Parameters.AddWithValue("@EMAIL", _email);
 
                         cmd.ExecuteNonQuery();
                     }

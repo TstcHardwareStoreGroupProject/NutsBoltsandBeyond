@@ -17,11 +17,13 @@ namespace NutsBoltsAndBeyond
         }
 
         DataTable dt;
-        String password, email, name, rng;
+        String uname, email, name;
         
         private void btnReset_Click(object sender, EventArgs e)
         {
-
+            frmToReset reset = new frmToReset();
+            reset.Show();
+            this.Close();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -46,11 +48,12 @@ namespace NutsBoltsAndBeyond
 
         private void btnValidate_Click(object sender, EventArgs e)
         {
-            password = tbxPassword.Text;
+            uname = tbxUsername.Text;
             email = tbxEmail.Text;
-            if (password == String.Empty || email == String.Empty)
+
+            if (uname == String.Empty || email == String.Empty)
             {
-                MessageBox.Show("PLEASE ENTER YOUR EMAIL AND PASSWORD TO RESET", "INCOMPLETE FIELDS", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                MessageBox.Show("Please enter your Username and Email to reset", "Incomplete Fields", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 SetDefaults();
             }
             else
@@ -60,15 +63,23 @@ namespace NutsBoltsAndBeyond
                 {
                     if (dr["EMAIL"].ToString() == email)
                     {
-                        if (dr["PASSWORD"].ToString() == password) 
+                        if (dr["USERNAME"].ToString() == uname) 
                         {
-                            name = dr.Field<String>("FNAME") != null ? dr.Field<String>("FNAME") + " " + dr.Field<String>("LNAME") : String.Empty;
+                            ProgOps.resetUser.ID = dr.Field<int>("USER_ID");
+                            ProgOps.resetUser.Fname = dr.Field<String>("FNAME") != null ? dr.Field<String>("FNAME") : String.Empty;
+                            ProgOps.resetUser.Lname = dr.Field<String>("LNAME") != null ? dr.Field<String>("LNAME") : String.Empty;
+                            ProgOps.resetUser.Username = dr.Field<String>("USERNAME") != null ? dr.Field<String>("USERNAME") : String.Empty;
+                            ProgOps.resetUser.Password = dr.Field<String>("PASSWORD") != null ? dr.Field<String>("PASSWORD") : String.Empty;
+                            ProgOps.resetUser.Designation = dr.Field<String>("DESIGNATION") != null ? dr.Field<String>("DESIGNATION") : String.Empty;
+                            ProgOps.resetUser.Email = dr.Field<String>("EMAIL") != null ? dr.Field<String>("EMAIL") : String.Empty;
+                            
+                            name = ProgOps.resetUser.Fname + " " + ProgOps.resetUser.Lname;
 
-                            rng = Convert.ToString(Utils._IDGenerator());
+                            ProgOps.rng = Convert.ToString(Utils._IDGenerator());
 
                             MailMessage mailMessage = new MailMessage();
 
-                            String messageBody = $"Hello, {name}! \nThanks for using Nuts, Bolts, and Beyond \n\nYour reset code is " + rng;
+                            String messageBody = $"Hello, {name}! \nThanks for using Nuts, Bolts, and Beyond \n\nYour reset code is " + ProgOps.rng;
                             String from = "admin@nbb.com";
 
                             mailMessage.To.Add(email);
@@ -85,7 +96,7 @@ namespace NutsBoltsAndBeyond
                             try
                             {
                                 client.Send(mailMessage);
-                                MessageBox.Show("GET YOUR RESET CODE AND COME BACK TO RESET", "SEND SUCCESS!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                                MessageBox.Show("You've been emailed a reset code. Bring it back to reset!", "Send Success!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                             }
                             catch (SmtpException ex)
                             {
@@ -104,13 +115,14 @@ namespace NutsBoltsAndBeyond
                         }
                         else
                         {
-                            MessageBox.Show("PLEASE CHECK YOUR INFORMATION AND TRY AGAIN", "PLEASE TRY AGAIN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Please check your information and try again", "Information invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            SetDefaults();
                         }
                     }
                 }
                 if (!flag)
                 {
-                    MessageBox.Show("PLEASE CHECK YOUR INFORMATION AND TRY AGAIN", "PLEASE TRY AGAIN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Please check your information and try again", "Information invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     SetDefaults();
                 }
             }
@@ -119,7 +131,7 @@ namespace NutsBoltsAndBeyond
         private void SetDefaults()
         {
             tbxEmail.Text = String.Empty;
-            tbxPassword.Text = String.Empty;
+            tbxUsername.Text = String.Empty;
         }
     }
 }
