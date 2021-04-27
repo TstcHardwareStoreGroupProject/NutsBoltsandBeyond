@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+using System.Net;
+using System.Net.Mail;
+using System.Net.Mime;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NutsBoltsAndBeyond
@@ -17,57 +14,15 @@ namespace NutsBoltsAndBeyond
         {
             InitializeComponent();
             ProgOps.ConnectDB();
+            btnReset.Visible = false;
         }
 
         DataTable dt;
-        String username, password, cfmPW;
+        String password, email;
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            username = tbxUsername.Text;
-            password = tbxPW.Text;
-            cfmPW = tbxCfmPW.Text;
-            if (username == String.Empty || password == String.Empty || cfmPW == String.Empty)
-            {
-                MessageBox.Show("All data is required to complete user accounts", "Incomplete Fields", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                SetDefaults();
-            }
-            else if (password != cfmPW)
-            {
-                MessageBox.Show("Passwords do not match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                SetDefaults();
-            }
-            else
-            {
-                String firstName, lastName, designation;
 
-                foreach (DataRow dr in dt.Rows)
-                {
-                    if (dr["USERNAME"].ToString() == username)
-                    {
-                        int id = Int32.Parse(dr["USER_ID"].ToString());
-                        firstName = dr["FNAME"].ToString();
-                        lastName = dr["LNAME"].ToString();
-                        designation = dr["DESIGNATION"].ToString();
-
-                        if (ProgOps._updateUser(id, firstName, lastName, username, password, designation))
-                        {
-                            ProgOps.CloseDB();
-                            SetDefaults();
-                            MessageBox.Show("PASSWORD UPDATED SUCCESSFULLY", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                            // close Form
-                            frmLogin login = new frmLogin();
-                            login.Show();
-                            this.Close();
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Please check your information and try again", "Please try again", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -90,11 +45,48 @@ namespace NutsBoltsAndBeyond
             ProgOps.CloseDB();
         }
 
+        private void btnValidate_Click(object sender, EventArgs e)
+        {
+            password = tbxPassword.Text;
+            email = tbxEmail.Text;
+            if (password == String.Empty || email == String.Empty)
+            {
+                MessageBox.Show("PLEASE ENTER YOUR EMAIL AND PASSWORD TO RESET", "INCOMPLETE FIELDS", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                SetDefaults();
+            }
+            else
+            {
+                Boolean flag = false;
+                foreach (DataRow dr in dt.Rows)
+                {
+                    if (dr["EMAIL"].ToString() == email)
+                    {
+                        if (dr["PASSWORD"].ToString() == password) 
+                        {
+                            MessageBox.Show("THANK YOU! PRESS THE VALIDATE BUTTON TO CHANGE YOUR PASSWORD", "VALIDATED!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            btnReset.Visible = true;
+                            btnValidate.Enabled = false;
+                            flag = true;
+                            SetDefaults();
+                        }
+                        else
+                        {
+                            MessageBox.Show("PLEASE CHECK YOUR INFORMATION AND TRY AGAIN", "PLEASE TRY AGAIN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+                if (!flag)
+                {
+                    MessageBox.Show("PLEASE CHECK YOUR INFORMATION AND TRY AGAIN", "PLEASE TRY AGAIN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    SetDefaults();
+                }
+            }
+        }
+
         private void SetDefaults()
         {
-            tbxUsername.Text = String.Empty;
-            tbxPW.Text = String.Empty;
-            tbxCfmPW.Text = String.Empty;
+            tbxEmail.Text = String.Empty;
+            tbxPassword.Text = String.Empty;
         }
     }
 }

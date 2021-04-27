@@ -66,18 +66,19 @@ namespace NutsBoltsAndBeyond
                         else
                         {
                             //Determine access level; access determines menu type to load
-                            ProgOps.access = dr.Field<String>("DESIGNATION") != null ? dr.Field<String>("DESIGNATION") : String.Empty;
-                            String pwCheck = dr.Field<String>("PASSWORD") != null ? dr.Field<String>("PASSWORD") : String.Empty;
+                            ProgOps._access = dr.Field<String>("DESIGNATION") != null ? dr.Field<String>("DESIGNATION") : String.Empty;
+                            ProgOps._password = dr.Field<String>("PASSWORD") != null ? dr.Field<String>("PASSWORD") : String.Empty;
                             String user = dr.Field<String>("FNAME") != null ? dr.Field<String>("FNAME") + " " + dr.Field<String>("LNAME") : String.Empty;
+                            ProgOps._email = dr.Field<String>("EMAIL") != null ? dr.Field<String>("EMAIL") : String.Empty;
                             user_id = dr.Field<Int32>("USER_ID");
                             //Check credentials against DB
-                            if (password == pwCheck)
+                            if (password == ProgOps._password)
                             {
                                 flag = true;
                                 MessageBox.Show("Welcome to Nuts Bolts and Beyond, " + user, "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
                                 //Determine form to open based on access level
-                                switch (ProgOps.access)
+                                switch (ProgOps._access)
                                 {
                                     case "Customer":
                                         frmMainMenu main = new frmMainMenu();

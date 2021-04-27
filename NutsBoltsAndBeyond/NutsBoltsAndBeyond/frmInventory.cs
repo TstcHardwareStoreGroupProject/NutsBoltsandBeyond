@@ -19,7 +19,7 @@ namespace NutsBoltsAndBeyond
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            switch (ProgOps.access)
+            switch (ProgOps._access)
             {
                 case "Customer":
                     frmMainMenu main = new frmMainMenu();
