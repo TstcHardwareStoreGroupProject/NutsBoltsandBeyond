@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Net;
 using System.Net.Mail;
-using System.Net.Mime;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -18,8 +17,8 @@ namespace NutsBoltsAndBeyond
         }
 
         DataTable dt;
-        String password, email;
-
+        String password, email, name, rng;
+        
         private void btnReset_Click(object sender, EventArgs e)
         {
 
@@ -63,7 +62,41 @@ namespace NutsBoltsAndBeyond
                     {
                         if (dr["PASSWORD"].ToString() == password) 
                         {
-                            MessageBox.Show("THANK YOU! PRESS THE VALIDATE BUTTON TO CHANGE YOUR PASSWORD", "VALIDATED!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            name = dr.Field<String>("FNAME") != null ? dr.Field<String>("FNAME") + " " + dr.Field<String>("LNAME") : String.Empty;
+
+                            rng = Convert.ToString(Utils._IDGenerator());
+
+                            MailMessage mailMessage = new MailMessage();
+
+                            String messageBody = $"Hello, {name}! \nThanks for using Nuts, Bolts, and Beyond \n\nYour reset code is " + rng;
+                            String from = "admin@nbb.com";
+
+                            mailMessage.To.Add(email);
+                            mailMessage.From = new MailAddress(from);
+                            mailMessage.Body = messageBody;
+                            mailMessage.Subject = "Nuts, Bolts, and Beyond Password Reset";
+
+                            var client = new SmtpClient("smtp.mailtrap.io", 2525)
+                            {
+                                Credentials = new NetworkCredential("079011543e154b", "e6bdb529dfe039"),
+                                EnableSsl = true
+                            };
+
+                            try
+                            {
+                                client.Send(mailMessage);
+                                MessageBox.Show("GET YOUR RESET CODE AND COME BACK TO RESET", "SEND SUCCESS!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                            }
+                            catch (SmtpException ex)
+                            {
+                                throw new ApplicationException
+                                    ("SmtpException has occured: " + ex.Message);
+                            }
+                            catch (Exception ex)
+                            {
+                                throw ex;
+                            }
+
                             btnReset.Visible = true;
                             btnValidate.Enabled = false;
                             flag = true;
