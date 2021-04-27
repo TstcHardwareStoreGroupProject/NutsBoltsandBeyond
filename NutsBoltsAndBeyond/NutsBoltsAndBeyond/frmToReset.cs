@@ -29,42 +29,44 @@ namespace NutsBoltsAndBeyond
             {
                 MessageBox.Show("All data is required to complete user accounts", "Incomplete Fields", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 SetDefaults();
-                return;
             }
             else if (password != confirm)
             {
                 MessageBox.Show("Passwords do not match. Please try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 SetDefaults();
-                return;
             }
             else if (password == ProgOps.resetUser.Password)
             {
                 MessageBox.Show("Old password and new password cannot be the same. Please try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 SetDefaults();
-                return;
             }
             else if (code != Utils.rng)
             {
                 MessageBox.Show("Reset Code does not match the code given", "Error", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 SetDefaults();
-                return;
             }
             else
             {
                 ProgOps.resetUser.Password = password;
-                ProgOps._saveUser(ProgOps.resetUser);
-                MessageBox.Show("Password Successfully Reset!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                ProgOps.resetUser.ResetUser();
+                if(ProgOps._updateUser(ProgOps.resetUser))
+                {
+                    MessageBox.Show("Password Successfully Reset!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    ProgOps.resetUser.ResetUser();
+                }
 
+
+                this.Hide();
                 frmLogin login = new frmLogin();
+                login.Closed += (a, args) => this.Close();
                 login.Show();
-                this.Close();
             }
         }
 
         void SetDefaults()
         {
-
+            tbxPassword.Text = String.Empty;
+            tbxConfirm.Text = String.Empty; ;
+            tbxResetCode.Text = String.Empty; ;
         }
     }
 }

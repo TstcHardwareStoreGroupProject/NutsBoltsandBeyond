@@ -25,19 +25,22 @@ namespace NutsBoltsAndBeyond
             switch (ProgOps.currentUser.Designation)
             {
                 case "Customer":
-                    frmMainMenu main = new frmMainMenu();
                     this.Hide();
-                    main.ShowDialog();
+                    frmMainMenu main = new frmMainMenu();
+                    main.FormClosed += (a, args) => this.Close();
+                    main.Show();
                     break;
                 case "Employee":
-                    frmEmployeeMenu emp = new frmEmployeeMenu();
                     this.Hide();
-                    emp.ShowDialog();
+                    frmEmployeeMenu emp = new frmEmployeeMenu();
+                    emp.FormClosed += (a, args) => this.Close();
+                    emp.Show();
                     break;
                 case "Admin":
-                    frmAdminMenu admin = new frmAdminMenu();
                     this.Hide();
-                    admin.ShowDialog();
+                    frmAdminMenu admin = new frmAdminMenu();
+                    admin.FormClosed += (a, args) => this.Close();
+                    admin.Show();
                     break;
                 default:
                     break;
@@ -46,9 +49,10 @@ namespace NutsBoltsAndBeyond
 
         private void btnShop_Click(object sender, EventArgs e)
         {
+            this.Hide();
             frmShop shop = new frmShop();
-            shop.Show();
-            this.Close();
+            shop.Closed += (a, args) => this.Close();
+            shop.Close();
         }
 
         private void btnRemove_Click(object sender, EventArgs e)

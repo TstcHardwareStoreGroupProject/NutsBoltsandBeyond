@@ -21,34 +21,38 @@ namespace NutsBoltsAndBeyond
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+            this.Hide();
             frmLogin login = new frmLogin();
+            login.Closed += (a, args) => this.Close();
             login.Show();
-            this.Close();
         }
 
         private void btnEmp_Click(object sender, EventArgs e)
         {
             type = "emp";
 
+            this.Hide();
             frmAccount account = new frmAccount();
+            account.Closed += (a, args) => this.Close();
             account.Show();
-            this.Close();
         }
 
         private void btnCus_Click(object sender, EventArgs e)
         {
             type = "cus";
 
+            this.Hide();
             frmAccount account = new frmAccount();
+            account.Closed += (a, args) => this.Close();
             account.Show();
-            this.Close();
         }
 
         private void btnStock_Click(object sender, EventArgs e)
         {
-            frmInventory inv = new frmInventory();
-            inv.Show();
             this.Hide();
+            frmInventory inv = new frmInventory();
+            inv.Closed += (a, args) => this.Close();
+            inv.Show();
         }
     }
 }

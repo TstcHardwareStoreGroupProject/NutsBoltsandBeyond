@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NutsBoltsAndBeyond
@@ -26,7 +20,6 @@ namespace NutsBoltsAndBeyond
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
-            Help.ShowPopup(tbxCode, "This code would be emailed to you before you can create an account. \nFor the purposes of this assignment, Employee = emp and Admin = admin", new Point(tbxCode.Right, tbxCode.Bottom));
             newUser = new Models.UserModel();
             newUser.Username = tbxUsername.Text;
             newUser.Fname = tbxFName.Text;
@@ -89,17 +82,19 @@ namespace NutsBoltsAndBeyond
                 MessageBox.Show("Account Created Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 // close Form
+                this.Hide();
                 frmLogin login = new frmLogin();
+                login.Closed += (a, args) => this.Close();
                 login.Show();
-                this.Close();
             }
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+            this.Hide();
             frmLogin login = new frmLogin();
+            login.Closed += (a, args) => this.Close();
             login.Show();
-            this.Close();
         }
 
         private void frmSignup_Load(object sender, EventArgs e)
@@ -115,6 +110,15 @@ namespace NutsBoltsAndBeyond
             ProgOps.CloseDB();
 
             cbxDesig.SelectedItem = "Customer";
+
+            ToolTip adminTip = new ToolTip();
+            adminTip.AutoPopDelay = 10000;
+            adminTip.InitialDelay = 0;
+            adminTip.ReshowDelay = 500;
+            adminTip.ShowAlways = true;
+
+            adminTip.SetToolTip(tbxCode, "This code would be emailed to you before you can create an account. \nFor the purposes of this assignment, Employee = emp and Admin = admin");
+
         }
 
         private void SetDefaults()

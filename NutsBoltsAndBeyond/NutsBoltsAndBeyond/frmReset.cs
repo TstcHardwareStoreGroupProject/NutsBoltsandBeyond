@@ -21,16 +21,18 @@ namespace NutsBoltsAndBeyond
         
         private void btnReset_Click(object sender, EventArgs e)
         {
-            frmToReset reset = new frmToReset();
+            this.Hide();
+            frmReset reset = new frmReset();
+            reset.Closed += (a, args) => this.Close();
             reset.Show();
-            this.Close();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+            this.Hide();
             frmLogin login = new frmLogin();
+            login.Closed += (a, args) => this.Close();
             login.Show();
-            this.Close();
         }
 
         private void frmReset_Load(object sender, EventArgs e)

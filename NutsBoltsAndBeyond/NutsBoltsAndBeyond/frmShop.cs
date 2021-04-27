@@ -70,9 +70,10 @@ namespace NutsBoltsAndBeyond
 
         private void btnViewCart_Click(object sender, EventArgs e)
         {
-            frmCart cart = new frmCart();
-            cart.Show();
             this.Hide();
+            frmCart cart = new frmCart();
+            cart.Closed += (a, args) => this.Close();
+            cart.Show();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -80,19 +81,22 @@ namespace NutsBoltsAndBeyond
             switch (ProgOps.currentUser.Designation)
             {
                 case "Customer":
-                    frmMainMenu main = new frmMainMenu();
                     this.Hide();
-                    main.ShowDialog();
+                    frmMainMenu main = new frmMainMenu();
+                    main.FormClosed += (a, args) => this.Close();
+                    main.Show();
                     break;
                 case "Employee":
-                    frmEmployeeMenu emp = new frmEmployeeMenu();
                     this.Hide();
-                    emp.ShowDialog();
+                    frmEmployeeMenu emp = new frmEmployeeMenu();
+                    emp.FormClosed += (a, args) => this.Close();
+                    emp.Show();
                     break;
                 case "Admin":
-                    frmAdminMenu admin = new frmAdminMenu();
                     this.Hide();
-                    admin.ShowDialog();
+                    frmAdminMenu admin = new frmAdminMenu();
+                    admin.FormClosed += (a, args) => this.Close();
+                    admin.Show();
                     break;
                 default:
                     break;
