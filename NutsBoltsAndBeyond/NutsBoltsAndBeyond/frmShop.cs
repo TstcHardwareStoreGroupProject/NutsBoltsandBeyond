@@ -19,12 +19,15 @@ namespace NutsBoltsAndBeyond
         private void frmShop_Load(object sender, EventArgs e)
         {
             ShopTable = new DataTable();
-            ProgOps.CartTable = new DataTable();
-            ProgOps.CartTable.Columns.Add("SKU", typeof(int));
-            ProgOps.CartTable.Columns.Add("ITEM", typeof(String));
-            ProgOps.CartTable.Columns.Add("PRICE", typeof(String));
-            ProgOps.CartTable.Columns.Add("QUANTITY", typeof(int));
-            ProgOps.CartTable.Columns.Add("DEPARTMENT", typeof(String));
+
+            if (!ProgOps.CartTable.Columns.Contains("SKU"))
+            {
+                ProgOps.CartTable.Columns.Add("SKU", typeof(int));
+                ProgOps.CartTable.Columns.Add("ITEM", typeof(String));
+                ProgOps.CartTable.Columns.Add("PRICE", typeof(Double));
+                ProgOps.CartTable.Columns.Add("QUANTITY", typeof(int));
+                ProgOps.CartTable.Columns.Add("DEPARTMENT", typeof(String));
+            }
 
             String query = "SELECT * FROM GROUP1SP212330.ITEMS";
 
@@ -37,7 +40,7 @@ namespace NutsBoltsAndBeyond
             ShopTable.Columns["ITEM_NAME"].ColumnName = "ITEM";
 
             dgvShop.DataSource = ShopTable;
-            
+            dgvShop.Columns[2].DefaultCellStyle.Format = "c";
         }
 
         private void btnAddToCart_Click(object sender, EventArgs e)
@@ -47,11 +50,11 @@ namespace NutsBoltsAndBeyond
                 int selected = dgvShop.CurrentCell.RowIndex;
 
                 DataGridViewRow row = dgvShop.Rows[selected];
+
                 int sku = Int32.Parse(row.Cells[0].Value.ToString());
                 String item = row.Cells[1].Value.ToString();
-                String price = row.Cells[2].Value.ToString();
-                price = String.Format("{0:C}", price);
-
+                double price = Double.Parse(row.Cells[2].Value.ToString());
+                price.ToString("C");
                 int quantity = 1;
                 String department = row.Cells[4].Value.ToString();
 

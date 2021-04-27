@@ -34,7 +34,9 @@ namespace NutsBoltsAndBeyond
 
         private void btnAcct_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("COMING SOON", "UNDER CONSTRUCTION", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            frmAccount account = new frmAccount();
+            account.Show();
+            this.Close();
         }
     }
 }

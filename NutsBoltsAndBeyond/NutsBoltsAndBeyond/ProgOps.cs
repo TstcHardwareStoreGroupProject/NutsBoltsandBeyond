@@ -38,15 +38,13 @@ namespace NutsBoltsAndBeyond
         #endregion
 
         #region Initialize
-        // TransactionList for Receipts and Admin filtering
 
         public static SqlConnection _cntDatabase;
         public static SqlDataAdapter _daRes;
 
-        public static DataTable CartTable;
+        public static DataTable CartTable = new DataTable();
 
-        public static String rng;
-
+        // Global Users
         public static Models.UserModel resetUser = new Models.UserModel();
         public static Models.UserModel currentUser = new Models.UserModel();
 
@@ -69,33 +67,31 @@ namespace NutsBoltsAndBeyond
 
         #region Delete Methods
 
-        public static bool _deleteManagerFromDB(int ID)
+        public static bool _deleteUserFromDB(int ID)
         {
             String del;
             bool flag = false;
-
-            //S
-                try
+            try
+            {
+                using (_cntDatabase = new SqlConnection(Utils.CONNECT_STRING))
                 {
-                    using (_cntDatabase = new SqlConnection(Utils.CONNECT_STRING))
+                    del = "DELETE FROM GROUP1SP212330.USERS ";
+                    del += "WHERE USER_ID = " + ID;
+
+                    using (SqlCommand cmd = new SqlCommand(del, _cntDatabase))
                     {
-                        del = "DELETE FROM " + Utils.DB + ".USER_DETAILS ";
-                        del += "WHERE USER_ID = " + ID;
-
-                        using (SqlCommand cmd = new SqlCommand(del, _cntDatabase))
-                        {
-                            _cntDatabase.Open();
-                            cmd.ExecuteNonQuery();
-                        }
-                        flag = true;
-                        CloseDB();
+                        _cntDatabase.Open();
+                        cmd.ExecuteNonQuery();
                     }
+                    flag = true;
+                    CloseDB();
                 }
-                catch (Exception)
-                {
-                    throw;
-                }
-                return flag;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return flag;
         }
 
         #endregion
@@ -205,8 +201,7 @@ namespace NutsBoltsAndBeyond
 
         #region Update Methods
 
-        public static bool _updateUser(int _id, String
-            _fname, String _lname, String _username, String _password, String _designation, String _email)
+        public static bool _updateUser(Models.UserModel _user)
         {
             String upd;
             bool flag = false;
@@ -218,16 +213,16 @@ namespace NutsBoltsAndBeyond
                     upd = "UPDATE GROUP1SP212330.USERS ";
                     upd += "SET FNAME = @FNAME, LNAME = @LNAME, " +
                         "USERNAME = @USERNAME, PASSWORD = @PASSWORD, DESIGNATION = @DESIGNATION, EMAIL = @EMAIL";
-                    upd += "WHERE USER_ID = @USER_ID";
+                    upd += " WHERE USER_ID = @USER_ID";
                     using (var cmd = new SqlCommand(upd, _cntDatabase))
                     {
-                        cmd.Parameters.AddWithValue("@USER_ID", _id);
-                        cmd.Parameters.AddWithValue("@FNAME", _fname);
-                        cmd.Parameters.AddWithValue("@LNAME", _lname);
-                        cmd.Parameters.AddWithValue("@USERNAME", _username);
-                        cmd.Parameters.AddWithValue("@PASSWORD", _password);
-                        cmd.Parameters.AddWithValue("@DESIGNATION", _designation);
-                        cmd.Parameters.AddWithValue("@EMAIL", _email);
+                        cmd.Parameters.AddWithValue("@USER_ID", _user.ID);
+                        cmd.Parameters.AddWithValue("@FNAME", _user.Fname);
+                        cmd.Parameters.AddWithValue("@LNAME", _user.Lname);
+                        cmd.Parameters.AddWithValue("@USERNAME", _user.Username);
+                        cmd.Parameters.AddWithValue("@PASSWORD", _user.Password);
+                        cmd.Parameters.AddWithValue("@DESIGNATION", _user.Designation);
+                        cmd.Parameters.AddWithValue("@EMAIL", _user.Email);
 
                         cmd.ExecuteNonQuery();
                     }
@@ -235,11 +230,47 @@ namespace NutsBoltsAndBeyond
                     CloseDB();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
             return flag;
+        }
+
+        public static void Reload(DataTable _dt)
+        {
+            ConnectDB();
+
+            _dt = new DataTable();
+
+            String query = "SELECT * FROM GROUP1SP212330.USERS";
+
+            switch (currentUser.Designation)
+            {
+                case "Customer":
+                    query += $" WHERE USERNAME = '{ProgOps.currentUser.Username}';";
+                    break;
+                case "Employee":
+                    query += " WHERE DESIGNATION = 'Customer';";
+                    break;
+                case "Admin":
+                    if (frmAdminMenu.type == "cus")
+                        query += " WHERE DESIGNATION = 'Customer';";
+                    else if (frmAdminMenu.type == "emp")
+                        query += " WHERE DESIGNATION != 'Customer';";
+                    else
+                        query += ";";
+                    break;
+                default:
+                    break;
+            }
+
+            _dt = new DataTable();
+
+            _daRes = new SqlDataAdapter(query, ProgOps._dbConnect);
+            _daRes.Fill(_dt);
+
+            ProgOps.CloseDB();
         }
 
         #endregion

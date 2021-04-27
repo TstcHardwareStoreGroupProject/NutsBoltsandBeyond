@@ -43,7 +43,7 @@ namespace NutsBoltsAndBeyond
                 SetDefaults();
                 return;
             }
-            else if (code != ProgOps.rng)
+            else if (code != Utils.rng)
             {
                 MessageBox.Show("Reset Code does not match the code given", "Error", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 SetDefaults();

@@ -118,7 +118,7 @@ namespace NutsBoltsAndBeyond
             // 
             this.tbxItem.Location = new System.Drawing.Point(139, 229);
             this.tbxItem.Name = "tbxItem";
-            this.tbxItem.Size = new System.Drawing.Size(167, 20);
+            this.tbxItem.Size = new System.Drawing.Size(165, 20);
             this.tbxItem.TabIndex = 10;
             // 
             // textBox1

@@ -17,7 +17,9 @@ namespace NutsBoltsAndBeyond
         #region Global Variables
         public static String _imgPath = Path.GetDirectoryName(Application.ExecutablePath) + "\\NBBLogo.png";
         public static String CONNECT_STRING = @"Server=cstnt.tstc.edu;Database=inew2330sp21;User Id=group1sp212330;password=1597159";
-        public static String DB = "GROUP1SP212330";
+
+        public static String rng = String.Empty;
+
         #endregion
 
         #region id generator
@@ -26,7 +28,6 @@ namespace NutsBoltsAndBeyond
          *  @params: void
          *  @return: int
          */
-
         public static int _IDGenerator()
         {
             var random = new Random();

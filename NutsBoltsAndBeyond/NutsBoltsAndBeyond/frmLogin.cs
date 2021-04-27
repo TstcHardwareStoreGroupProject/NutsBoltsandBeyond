@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -32,14 +26,14 @@ namespace NutsBoltsAndBeyond
         {
             frmSignup signup = new frmSignup();
             signup.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
             frmReset reset = new frmReset();
             reset.Show();
-            this.Hide();
+            this.Close();
         }
 
         public bool flag = false;
@@ -104,24 +98,14 @@ namespace NutsBoltsAndBeyond
                                         break;
                                 }
                             }
-                            else
-                            {
-                                MessageBox.Show("Please check your information and try again", "Please try again", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                tbxUsername.Text = String.Empty;
-                                tbxPassword.Text = String.Empty;
-                            }
                             break;
                         }
                     }
                     if (flag == false)
                     {
-                        MessageBox.Show("Please check your information and try again", "Please try again", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("flag: Please check your information and try again", "Please try again", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         tbxUsername.Text = String.Empty;
                         tbxPassword.Text = String.Empty;
-                    }
-                    else 
-                    {
-                        
                     }
                 }
             }
@@ -137,9 +121,6 @@ namespace NutsBoltsAndBeyond
             ProgOps._daRes.Fill(dt);
 
             ProgOps.CloseDB();
-
-            // Will load all tables on launch
-            // ProgOps.LoadAll();
         }
     }
 }

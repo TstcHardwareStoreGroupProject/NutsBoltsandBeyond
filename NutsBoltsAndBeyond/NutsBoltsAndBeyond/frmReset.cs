@@ -75,17 +75,17 @@ namespace NutsBoltsAndBeyond
                             
                             name = ProgOps.resetUser.Fname + " " + ProgOps.resetUser.Lname;
 
-                            ProgOps.rng = Convert.ToString(Utils._IDGenerator());
+                            Utils.rng = Convert.ToString(Utils._IDGenerator());
 
                             MailMessage mailMessage = new MailMessage();
 
-                            String messageBody = $"Hello, {name}! \nThanks for using Nuts, Bolts, and Beyond \n\nYour reset code is " + ProgOps.rng;
+                            String messageBody = $"Hello, {name}! \nThanks for using Nuts Bolts and Beyond \n\nYour reset code is " + Utils.rng;
                             String from = "admin@nbb.com";
 
                             mailMessage.To.Add(email);
                             mailMessage.From = new MailAddress(from);
                             mailMessage.Body = messageBody;
-                            mailMessage.Subject = "Nuts, Bolts, and Beyond Password Reset";
+                            mailMessage.Subject = "Nuts Bolts and Beyond Password Reset";
 
                             var client = new SmtpClient("smtp.mailtrap.io", 2525)
                             {
