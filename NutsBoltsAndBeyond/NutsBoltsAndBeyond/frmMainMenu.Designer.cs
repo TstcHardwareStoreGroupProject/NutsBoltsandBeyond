@@ -33,7 +33,7 @@ namespace NutsBoltsAndBeyond
             this.lblDesig = new System.Windows.Forms.Label();
             this.btnShop = new System.Windows.Forms.Button();
             this.btnAcct = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -76,21 +76,22 @@ namespace NutsBoltsAndBeyond
             this.btnAcct.UseVisualStyleBackColor = true;
             this.btnAcct.Click += new System.EventHandler(this.btnAcct_Click);
             // 
-            // btnExit
+            // btnLogout
             // 
-            this.btnExit.Location = new System.Drawing.Point(472, 324);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(100, 25);
-            this.btnExit.TabIndex = 10;
-            this.btnExit.Text = "&LOGOUT";
-            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnLogout.Location = new System.Drawing.Point(472, 324);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(100, 25);
+            this.btnLogout.TabIndex = 10;
+            this.btnLogout.Text = "&LOGOUT";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // frmMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 361);
-            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnAcct);
             this.Controls.Add(this.btnShop);
             this.Controls.Add(this.lblDesig);
@@ -110,7 +111,7 @@ namespace NutsBoltsAndBeyond
         private System.Windows.Forms.Label lblDesig;
         private System.Windows.Forms.Button btnShop;
         private System.Windows.Forms.Button btnAcct;
-        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnLogout;
     }
 }
 

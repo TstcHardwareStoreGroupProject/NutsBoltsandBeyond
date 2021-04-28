@@ -18,14 +18,6 @@ namespace NutsBoltsAndBeyond
             ProgOps.ConnectDB();
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            frmLogin login = new frmLogin();
-            login.Closed += (a, args) => this.Close();
-            login.Show();
-        }
-
         private void btnShop_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -40,6 +32,14 @@ namespace NutsBoltsAndBeyond
             frmAccount account = new frmAccount();
             account.Closed += (a, args) => this.Close();
             account.Show();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmLogin login = new frmLogin();
+            login.Closed += (a, args) => this.Close();
+            login.Show();
         }
     }
 }

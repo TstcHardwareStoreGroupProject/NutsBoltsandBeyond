@@ -121,7 +121,6 @@ namespace NutsBoltsAndBeyond
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblTitle);
             this.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmToReset";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuts Bolts and Beyond";

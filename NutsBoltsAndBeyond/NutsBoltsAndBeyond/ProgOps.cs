@@ -53,15 +53,26 @@ namespace NutsBoltsAndBeyond
 
         #region Load Methods
 
-        public static void LoadUsers(DataTable _dt, String _query)
+        public static int getQuantity(int _id) 
         {
-            _dt = new DataTable();
+            String select;
+            int quantity;
 
-            //TODO: Rigged for data normalization... to be fixed...
-            ProgOps._daRes = new SqlDataAdapter(_query, _dbConnect);
-            ProgOps._daRes.Fill(_dt);
+            using (_cntDatabase = new SqlConnection(Utils.CONNECT_STRING))
+            {
+                _cntDatabase.Open();
 
-            ProgOps.CloseDB();
+                select = "SELECT QUANTITY FROM GROUP1SP212330.ITEMS ";
+                select += "WHERE ITEM_ID = @ITEM_ID";
+
+                using (var cmd = new SqlCommand(select, _cntDatabase))
+                {
+                    cmd.Parameters.AddWithValue("@ITEM_ID", _id);
+                    quantity = (int)cmd.ExecuteScalar();
+                }
+            }
+            CloseDB();
+            return quantity;
         }
 
         #endregion
@@ -255,6 +266,35 @@ namespace NutsBoltsAndBeyond
                         cmd.Parameters.AddWithValue("@PASSWORD", _user.Password);
                         cmd.Parameters.AddWithValue("@DESIGNATION", _user.Designation);
                         cmd.Parameters.AddWithValue("@EMAIL", _user.Email);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                    flag = true;
+                    CloseDB();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return flag;
+        }
+
+        public static bool _updateItem(String _quantity, String _id)
+        {
+            String upd;
+            bool flag = false;
+            try
+            {
+                using (_cntDatabase = new SqlConnection(Utils.CONNECT_STRING))
+                {
+                    _cntDatabase.Open();
+                    upd = "UPDATE GROUP1SP212330.ITEMS ";
+                    upd += "SET QUANTITY = @QUANTITY WHERE ITEM_ID = @ITEM_ID";
+                    using (var cmd = new SqlCommand(upd, _cntDatabase))
+                    {
+                        cmd.Parameters.AddWithValue("@QUANTITY", _quantity);
+                        cmd.Parameters.AddWithValue("@ITEM_ID", _id);
 
                         cmd.ExecuteNonQuery();
                     }

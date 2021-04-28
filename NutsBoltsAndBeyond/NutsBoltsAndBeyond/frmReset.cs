@@ -22,7 +22,7 @@ namespace NutsBoltsAndBeyond
         private void btnReset_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmReset reset = new frmReset();
+            frmToReset reset = new frmToReset();
             reset.Closed += (a, args) => this.Close();
             reset.Show();
         }
@@ -89,10 +89,14 @@ namespace NutsBoltsAndBeyond
                             mailMessage.Body = messageBody;
                             mailMessage.Subject = "Nuts Bolts and Beyond Password Reset";
 
-                            var client = new SmtpClient("smtp.mailtrap.io", 2525)
+                            var client = new SmtpClient("smtp.gmail.com", 587)
+                            //var client = new SmtpClient("smtp.mailtrap.io", 2525)
                             {
-                                Credentials = new NetworkCredential("079011543e154b", "e6bdb529dfe039"),
-                                EnableSsl = true
+                                UseDefaultCredentials = false,
+                                Credentials = new NetworkCredential("NutsBoltsandBeyond2021@gmail.com", "TstcCrew2021"),
+                                //Credentials = new NetworkCredential("079011543e154b", "e6bdb529dfe039"),
+                                EnableSsl = true,
+                                DeliveryMethod = SmtpDeliveryMethod.Network
                             };
 
                             try
@@ -113,11 +117,6 @@ namespace NutsBoltsAndBeyond
                             btnReset.Visible = true;
                             btnValidate.Enabled = false;
                             flag = true;
-                            SetDefaults();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Please check your information and try again", "Information invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             SetDefaults();
                         }
                     }

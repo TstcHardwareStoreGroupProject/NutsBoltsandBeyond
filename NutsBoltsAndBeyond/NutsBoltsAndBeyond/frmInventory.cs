@@ -14,7 +14,6 @@ namespace NutsBoltsAndBeyond
         }
 
         DataTable dt;
-        Models.ItemModel current;
 
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -84,8 +83,6 @@ namespace NutsBoltsAndBeyond
             DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this item? All information will be lost", "Confirm", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                MessageBox.Show(row.Cells[0].Value.ToString());
-
                 String id = row.Cells[0].Value.ToString();
                 if (ProgOps._deleteItem(id))
                 {

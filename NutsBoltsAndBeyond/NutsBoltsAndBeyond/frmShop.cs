@@ -16,9 +16,10 @@ namespace NutsBoltsAndBeyond
         }
 
         public DataTable ShopTable;
-
+        public static int outOfCart;
         private void frmShop_Load(object sender, EventArgs e)
         {
+            ProgOps.ConnectDB();
             ShopTable = new DataTable();
 
             if (!ProgOps.CartTable.Columns.Contains("SKU"))
@@ -59,7 +60,14 @@ namespace NutsBoltsAndBeyond
                 int quantity = 1;
                 String department = row.Cells[4].Value.ToString();
 
+                int newVal = Int32.Parse(row.Cells[3].Value.ToString()) - 1;
                 bool set = ProgOps.CartTable.AsEnumerable().Any(r => sku == r.Field<int>("SKU"));
+
+                if (newVal < 0)
+                {
+                    MessageBox.Show("Quantity not available", "Out of stock", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
 
                 if (!set)
                 {
@@ -77,9 +85,17 @@ namespace NutsBoltsAndBeyond
                     }
                 }
 
-                MessageBox.Show("Item added successfully to the cart!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                String id = row.Cells[0].Value.ToString();
 
-                row.Cells[3].Value = Int32.Parse(row.Cells[3].Value.ToString()) - 1;
+                if (ProgOps._updateItem(newVal.ToString(), id))
+                {
+                    MessageBox.Show("Item added successfully to the cart!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    frmShop_Load(sender, e);
+                }
+                else
+                {
+                    MessageBox.Show("There was a problem. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
