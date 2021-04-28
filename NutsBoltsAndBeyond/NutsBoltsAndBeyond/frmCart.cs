@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NutsBoltsAndBeyond
@@ -23,26 +16,31 @@ namespace NutsBoltsAndBeyond
         {
             _transactionid = Utils._IDGenerator();
             dgvCart.DataSource = ProgOps.CartTable;
+
+            dgvCart.Columns[2].DefaultCellStyle.Format = "c";
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            switch (ProgOps.access)
+            switch (ProgOps.currentUser.Designation)
             {
                 case "Customer":
-                    frmMainMenu main = new frmMainMenu();
                     this.Hide();
-                    main.ShowDialog();
+                    frmMainMenu main = new frmMainMenu();
+                    main.FormClosed += (a, args) => this.Close();
+                    main.Show();
                     break;
                 case "Employee":
-                    frmEmployeeMenu emp = new frmEmployeeMenu();
                     this.Hide();
-                    emp.ShowDialog();
+                    frmEmployeeMenu emp = new frmEmployeeMenu();
+                    emp.FormClosed += (a, args) => this.Close();
+                    emp.Show();
                     break;
                 case "Admin":
-                    frmAdminMenu admin = new frmAdminMenu();
                     this.Hide();
-                    admin.ShowDialog();
+                    frmAdminMenu admin = new frmAdminMenu();
+                    admin.FormClosed += (a, args) => this.Close();
+                    admin.Show();
                     break;
                 default:
                     break;
@@ -51,9 +49,10 @@ namespace NutsBoltsAndBeyond
 
         private void btnShop_Click(object sender, EventArgs e)
         {
+            this.Hide();
             frmShop shop = new frmShop();
+            shop.Closed += (a, args) => this.Close();
             shop.Show();
-            this.Close();
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -62,11 +61,21 @@ namespace NutsBoltsAndBeyond
             {
                 int selected = dgvCart.CurrentCell.RowIndex;
 
+                DataGridViewRow row = dgvCart.Rows[selected];
+
+                int id = Int32.Parse(row.Cells[0].Value.ToString());
+                int quantity = Int32.Parse(row.Cells[3].Value.ToString());
+
                 DialogResult dialogResult = MessageBox.Show("Are you sure you want to remove this item?", "Are you sure", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    dgvCart.Rows.RemoveAt(selected);
-                    MessageBox.Show("Item added successfully removed from the cart!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    int fromCart = ProgOps.getQuantity(id);
+                    if (ProgOps._updateItem((quantity + fromCart).ToString(), id.ToString()))
+                    {
+                        dgvCart.Rows.RemoveAt(selected);
+                        MessageBox.Show("Item added successfully removed from the cart!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    
                 }
 
             }
@@ -74,11 +83,14 @@ namespace NutsBoltsAndBeyond
             {
                 MessageBox.Show("Please select an item and try again", "There was a problem...", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            
         }
 
         private void btnCheckout_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Checkout Successful... I know, we're working on it...", "Success, kinda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            ProgOps.CartTable.Clear();
+            frmCart_Load(sender, e);
         }
     }
 }

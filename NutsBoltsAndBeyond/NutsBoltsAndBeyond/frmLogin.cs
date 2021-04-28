@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -21,8 +15,8 @@ namespace NutsBoltsAndBeyond
         }
 
         DataTable dt;
-        public static int user_id;
         String username, password;
+
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -30,16 +24,18 @@ namespace NutsBoltsAndBeyond
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
-            frmSignup signup = new frmSignup();
-            signup.Show();
             this.Hide();
+            frmSignup signup = new frmSignup();
+            signup.Closed +=(a, args) => this.Close();
+            signup.Show();
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            frmReset reset = new frmReset();
-            reset.Show();
             this.Hide();
+            frmReset reset = new frmReset();
+            reset.Closed += (a, args) => this.Close();
+            reset.Show();
         }
 
         public bool flag = false;
@@ -66,56 +62,56 @@ namespace NutsBoltsAndBeyond
                         else
                         {
                             //Determine access level; access determines menu type to load
-                            ProgOps.access = dr.Field<String>("DESIGNATION") != null ? dr.Field<String>("DESIGNATION") : String.Empty;
-                            String pwCheck = dr.Field<String>("PASSWORD") != null ? dr.Field<String>("PASSWORD") : String.Empty;
-                            String user = dr.Field<String>("FNAME") != null ? dr.Field<String>("FNAME") + " " + dr.Field<String>("LNAME") : String.Empty;
-                            user_id = dr.Field<Int32>("USER_ID");
+                            ProgOps.currentUser.ID = dr.Field<int>("USER_ID");
+                            ProgOps.currentUser.Fname = dr.Field<String>("FNAME") != null ? dr.Field<String>("FNAME") : String.Empty;
+                            ProgOps.currentUser.Lname = dr.Field<String>("LNAME") != null ? dr.Field<String>("LNAME") : String.Empty;
+                            ProgOps.currentUser.Username = dr.Field<String>("USERNAME") != null ? dr.Field<String>("USERNAME") : String.Empty;
+                            ProgOps.currentUser.Password = dr.Field<String>("PASSWORD") != null ? dr.Field<String>("PASSWORD") : String.Empty;
+                            ProgOps.currentUser.Designation = dr.Field<String>("DESIGNATION") != null ? dr.Field<String>("DESIGNATION") : String.Empty;
+                            ProgOps.currentUser.Email = dr.Field<String>("EMAIL") != null ? dr.Field<String>("EMAIL") : String.Empty;
+
+                            String name = ProgOps.currentUser.Fname + " " + ProgOps.currentUser.Lname;
+
                             //Check credentials against DB
-                            if (password == pwCheck)
+                            if (password == ProgOps.currentUser.Password)
                             {
                                 flag = true;
-                                MessageBox.Show("Welcome to Nuts Bolts and Beyond, " + user, "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                                MessageBox.Show($"Welcome to Nuts Bolts and Beyond, {name}", "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
                                 //Determine form to open based on access level
-                                switch (ProgOps.access)
+                                switch (ProgOps.currentUser.Designation)
                                 {
                                     case "Customer":
-                                        frmMainMenu main = new frmMainMenu();
                                         this.Hide();
-                                        main.ShowDialog();
+                                        frmMainMenu main = new frmMainMenu();
+                                        main.FormClosed += (a, args) => this.Close();
+                                        main.Show();
                                         break;
                                     case "Employee":
-                                        frmEmployeeMenu emp = new frmEmployeeMenu();
                                         this.Hide();
-                                        emp.ShowDialog();
+                                        frmEmployeeMenu emp = new frmEmployeeMenu();
+                                        emp.FormClosed += (a, args) => this.Close();
+                                        emp.Show();
                                         break;
                                     case "Admin":
-                                        frmAdminMenu admin = new frmAdminMenu();
                                         this.Hide();
-                                        admin.ShowDialog();
+                                        frmAdminMenu admin = new frmAdminMenu();
+                                        admin.FormClosed += (a, args) => this.Close();
+                                        admin.Show();
                                         break;
                                     default:
                                         break;
                                 }
-                            }
-                            else
-                            {
-                                MessageBox.Show("Please check your information and try again", "Please try again", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                tbxUsername.Text = String.Empty;
-                                tbxPassword.Text = String.Empty;
+
                             }
                             break;
                         }
                     }
                     if (flag == false)
                     {
-                        MessageBox.Show("Please check your information and try again", "Please try again", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("flag: Please check your information and try again", "Please try again", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         tbxUsername.Text = String.Empty;
                         tbxPassword.Text = String.Empty;
-                    }
-                    else 
-                    {
-                        
                     }
                 }
             }
@@ -131,9 +127,6 @@ namespace NutsBoltsAndBeyond
             ProgOps._daRes.Fill(dt);
 
             ProgOps.CloseDB();
-
-            // Will load all tables on launch
-            // ProgOps.LoadAll();
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Globalization;
 using System.Windows.Forms;
 
@@ -15,16 +16,20 @@ namespace NutsBoltsAndBeyond
         }
 
         public DataTable ShopTable;
-
+        public static int outOfCart;
         private void frmShop_Load(object sender, EventArgs e)
         {
+            ProgOps.ConnectDB();
             ShopTable = new DataTable();
-            ProgOps.CartTable = new DataTable();
-            ProgOps.CartTable.Columns.Add("SKU", typeof(int));
-            ProgOps.CartTable.Columns.Add("ITEM", typeof(String));
-            ProgOps.CartTable.Columns.Add("PRICE", typeof(String));
-            ProgOps.CartTable.Columns.Add("QUANTITY", typeof(int));
-            ProgOps.CartTable.Columns.Add("DEPARTMENT", typeof(String));
+
+            if (!ProgOps.CartTable.Columns.Contains("SKU"))
+            {
+                ProgOps.CartTable.Columns.Add("SKU", typeof(int));
+                ProgOps.CartTable.Columns.Add("ITEM", typeof(String));
+                ProgOps.CartTable.Columns.Add("PRICE", typeof(Double));
+                ProgOps.CartTable.Columns.Add("QUANTITY", typeof(int));
+                ProgOps.CartTable.Columns.Add("DEPARTMENT", typeof(String));
+            }
 
             String query = "SELECT * FROM GROUP1SP212330.ITEMS";
 
@@ -37,7 +42,7 @@ namespace NutsBoltsAndBeyond
             ShopTable.Columns["ITEM_NAME"].ColumnName = "ITEM";
 
             dgvShop.DataSource = ShopTable;
-            
+            dgvShop.Columns[2].DefaultCellStyle.Format = "c";
         }
 
         private void btnAddToCart_Click(object sender, EventArgs e)
@@ -47,17 +52,50 @@ namespace NutsBoltsAndBeyond
                 int selected = dgvShop.CurrentCell.RowIndex;
 
                 DataGridViewRow row = dgvShop.Rows[selected];
+
                 int sku = Int32.Parse(row.Cells[0].Value.ToString());
                 String item = row.Cells[1].Value.ToString();
-                String price = row.Cells[2].Value.ToString();
-                price = String.Format("{0:C}", price);
-
+                double price = Double.Parse(row.Cells[2].Value.ToString());
+                price.ToString("C");
                 int quantity = 1;
                 String department = row.Cells[4].Value.ToString();
 
-                ProgOps.CartTable.Rows.Add(sku, item, price, quantity, department);
+                int newVal = Int32.Parse(row.Cells[3].Value.ToString()) - 1;
+                bool set = ProgOps.CartTable.AsEnumerable().Any(r => sku == r.Field<int>("SKU"));
 
-                MessageBox.Show("Item added successfully to the cart!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (newVal < 0)
+                {
+                    MessageBox.Show("Quantity not available", "Out of stock", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                if (!set)
+                {
+                    ProgOps.CartTable.Rows.Add(sku, item, price, quantity, department);
+                }
+                else
+                {
+                    foreach (DataRow dr in ProgOps.CartTable.Rows)
+                    {
+                        if (dr["SKU"].ToString() == sku.ToString())
+                        {
+                            quantity = Int32.Parse(dr["QUANTITY"].ToString()) + 1;
+                        }
+                        dr["QUANTITY"] = quantity;
+                    }
+                }
+
+                String id = row.Cells[0].Value.ToString();
+
+                if (ProgOps._updateItem(newVal.ToString(), id))
+                {
+                    MessageBox.Show("Item added successfully to the cart!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    frmShop_Load(sender, e);
+                }
+                else
+                {
+                    MessageBox.Show("There was a problem. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
@@ -67,29 +105,33 @@ namespace NutsBoltsAndBeyond
 
         private void btnViewCart_Click(object sender, EventArgs e)
         {
-            frmCart cart = new frmCart();
-            cart.Show();
             this.Hide();
+            frmCart cart = new frmCart();
+            cart.Closed += (a, args) => this.Close();
+            cart.Show();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            switch (ProgOps.access)
+            switch (ProgOps.currentUser.Designation)
             {
                 case "Customer":
-                    frmMainMenu main = new frmMainMenu();
                     this.Hide();
-                    main.ShowDialog();
+                    frmMainMenu main = new frmMainMenu();
+                    main.FormClosed += (a, args) => this.Close();
+                    main.Show();
                     break;
                 case "Employee":
-                    frmEmployeeMenu emp = new frmEmployeeMenu();
                     this.Hide();
-                    emp.ShowDialog();
+                    frmEmployeeMenu emp = new frmEmployeeMenu();
+                    emp.FormClosed += (a, args) => this.Close();
+                    emp.Show();
                     break;
                 case "Admin":
-                    frmAdminMenu admin = new frmAdminMenu();
                     this.Hide();
-                    admin.ShowDialog();
+                    frmAdminMenu admin = new frmAdminMenu();
+                    admin.FormClosed += (a, args) => this.Close();
+                    admin.Show();
                     break;
                 default:
                     break;

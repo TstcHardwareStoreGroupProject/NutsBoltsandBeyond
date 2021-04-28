@@ -18,23 +18,28 @@ namespace NutsBoltsAndBeyond
             ProgOps.ConnectDB();
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            frmLogin login = new frmLogin();
-            login.Show();
-            this.Close();
-        }
-
         private void btnShop_Click(object sender, EventArgs e)
         {
+            this.Hide();
             frmShop shop = new frmShop();
+            shop.Closed += (a, args) => this.Close();
             shop.Show();
-            this.Close();
         }
 
         private void btnAcct_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("COMING SOON", "UNDER CONSTRUCTION", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            this.Hide();
+            frmAccount account = new frmAccount();
+            account.Closed += (a, args) => this.Close();
+            account.Show();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmLogin login = new frmLogin();
+            login.Closed += (a, args) => this.Close();
+            login.Show();
         }
     }
 }
