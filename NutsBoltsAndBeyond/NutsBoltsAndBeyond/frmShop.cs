@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Globalization;
 using System.Windows.Forms;
 
@@ -58,9 +59,27 @@ namespace NutsBoltsAndBeyond
                 int quantity = 1;
                 String department = row.Cells[4].Value.ToString();
 
-                ProgOps.CartTable.Rows.Add(sku, item, price, quantity, department);
+                bool set = ProgOps.CartTable.AsEnumerable().Any(r => sku == r.Field<int>("SKU"));
+
+                if (!set)
+                {
+                    ProgOps.CartTable.Rows.Add(sku, item, price, quantity, department);
+                }
+                else
+                {
+                    foreach (DataRow dr in ProgOps.CartTable.Rows)
+                    {
+                        if (dr["SKU"].ToString() == sku.ToString())
+                        {
+                            quantity = Int32.Parse(dr["QUANTITY"].ToString()) + 1;
+                        }
+                        dr["QUANTITY"] = quantity;
+                    }
+                }
 
                 MessageBox.Show("Item added successfully to the cart!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                row.Cells[3].Value = Int32.Parse(row.Cells[3].Value.ToString()) - 1;
             }
             else
             {

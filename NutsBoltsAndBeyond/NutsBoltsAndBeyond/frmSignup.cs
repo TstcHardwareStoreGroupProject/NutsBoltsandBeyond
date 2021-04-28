@@ -14,7 +14,6 @@ namespace NutsBoltsAndBeyond
         }
 
         DataTable dt;
-        // will need to add admin code to prevent non-admin/employees 
         String cfmPW, adminCode;
         Models.UserModel newUser;
 
@@ -99,11 +98,9 @@ namespace NutsBoltsAndBeyond
 
         private void frmSignup_Load(object sender, EventArgs e)
         {
-            // loads datatable on load; Query will be global on normalization
             String query = "SELECT * FROM GROUP1SP212330.USERS";
             dt = new DataTable();
 
-            //TODO: Rigged for data normalization... to be fixed...
             ProgOps._daRes = new SqlDataAdapter(query, ProgOps._dbConnect);
             ProgOps._daRes.Fill(dt);
 
@@ -118,7 +115,6 @@ namespace NutsBoltsAndBeyond
             adminTip.ShowAlways = true;
 
             adminTip.SetToolTip(tbxCode, "This code would be emailed to you before you can create an account. \nFor the purposes of this assignment, Employee = emp and Admin = admin");
-
         }
 
         private void SetDefaults()

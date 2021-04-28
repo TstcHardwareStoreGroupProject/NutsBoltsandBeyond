@@ -52,7 +52,7 @@ namespace NutsBoltsAndBeyond
             this.Hide();
             frmShop shop = new frmShop();
             shop.Closed += (a, args) => this.Close();
-            shop.Close();
+            shop.Show();
         }
 
         private void btnRemove_Click(object sender, EventArgs e)

@@ -38,8 +38,8 @@ namespace NutsBoltsAndBeyond
             this.lblViewEmail = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.gbxConfirm = new System.Windows.Forms.GroupBox();
-            this.btnConfirm = new System.Windows.Forms.Button();
             this.tbxConfirm = new System.Windows.Forms.TextBox();
+            this.btnConfirm = new System.Windows.Forms.Button();
             this.tbxUsername = new System.Windows.Forms.TextBox();
             this.tbxPassword = new System.Windows.Forms.TextBox();
             this.tbxEmail = new System.Windows.Forms.TextBox();
@@ -138,6 +138,14 @@ namespace NutsBoltsAndBeyond
             this.gbxConfirm.TabStop = false;
             this.gbxConfirm.Text = "ENTER PASSWORD TO CONFIRM";
             // 
+            // tbxConfirm
+            // 
+            this.tbxConfirm.Location = new System.Drawing.Point(7, 35);
+            this.tbxConfirm.Name = "tbxConfirm";
+            this.tbxConfirm.PasswordChar = '*';
+            this.tbxConfirm.Size = new System.Drawing.Size(129, 17);
+            this.tbxConfirm.TabIndex = 15;
+            // 
             // btnConfirm
             // 
             this.btnConfirm.Location = new System.Drawing.Point(25, 67);
@@ -148,17 +156,9 @@ namespace NutsBoltsAndBeyond
             this.btnConfirm.UseVisualStyleBackColor = true;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
-            // tbxConfirm
-            // 
-            this.tbxConfirm.Location = new System.Drawing.Point(7, 35);
-            this.tbxConfirm.Name = "tbxConfirm";
-            this.tbxConfirm.PasswordChar = '*';
-            this.tbxConfirm.Size = new System.Drawing.Size(129, 17);
-            this.tbxConfirm.TabIndex = 15;
-            // 
             // tbxUsername
             // 
-            this.tbxUsername.Location = new System.Drawing.Point(237, 225);
+            this.tbxUsername.Location = new System.Drawing.Point(237, 222);
             this.tbxUsername.Name = "tbxUsername";
             this.tbxUsername.Size = new System.Drawing.Size(140, 20);
             this.tbxUsername.TabIndex = 16;

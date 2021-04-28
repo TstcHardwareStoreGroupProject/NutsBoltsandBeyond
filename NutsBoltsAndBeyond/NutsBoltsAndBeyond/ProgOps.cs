@@ -42,8 +42,9 @@ namespace NutsBoltsAndBeyond
         public static SqlConnection _cntDatabase;
         public static SqlDataAdapter _daRes;
 
+        // shop and cart
         public static DataTable CartTable = new DataTable();
-
+        public static DataTable ShopTable = new DataTable();
         // Global Users
         public static Models.UserModel resetUser = new Models.UserModel();
         public static Models.UserModel currentUser = new Models.UserModel();
@@ -77,6 +78,35 @@ namespace NutsBoltsAndBeyond
                 {
                     del = "DELETE FROM GROUP1SP212330.USERS ";
                     del += "WHERE USER_ID = " + ID;
+
+                    using (SqlCommand cmd = new SqlCommand(del, _cntDatabase))
+                    {
+                        _cntDatabase.Open();
+                        cmd.ExecuteNonQuery();
+                    }
+                    flag = true;
+                    CloseDB();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return flag;
+        }
+
+        public static bool _deleteItem(String _id)
+        {
+            ConnectDB();
+
+            String del;
+            bool flag = false;
+            try
+            {
+                using (_cntDatabase = new SqlConnection(Utils.CONNECT_STRING))
+                {
+                    del = "DELETE FROM GROUP1SP212330.ITEMS ";
+                    del += "WHERE ITEM_ID = '" + _id + "'";
 
                     using (SqlCommand cmd = new SqlCommand(del, _cntDatabase))
                     {
@@ -136,27 +166,29 @@ namespace NutsBoltsAndBeyond
 
         /*
         *   Insert Item model to DB        
-        *   @param: _productid, _type, _price
+        *   @param: Models.ItemModel
         *   @return: void
         */
-        public static void _saveItems(int _itemid, String _item, String _price, int _quantity, String _department)
+        public static void _saveItems(Models.ItemModel _item)
         {
+            ConnectDB();
+
             String upd;
 
-            _itemid = Utils._IDGenerator();
+            _item.ITEM_ID = Utils._IDGenerator();
 
             using (_cntDatabase = new SqlConnection(Utils.CONNECT_STRING))
             {
                 _cntDatabase.Open();
-                upd = "INSERT INTO GROUP1SP212330.PRODUCTS ";
+                upd = "INSERT INTO GROUP1SP212330.ITEMS ";
                 upd += "VALUES(@ITEM_ID, @ITEM_NAME, @PRICE, @QUANTITY, @DEPARTMENT)";
                 using (var cmd = new SqlCommand(upd, _cntDatabase))
                 {
-                    cmd.Parameters.AddWithValue("@ITEM_ID", _itemid);
-                    cmd.Parameters.AddWithValue("@ITEM_NAME", _item);
-                    cmd.Parameters.Add("@PRICE", SqlDbType.Money).Value = Decimal.Parse(_price);
-                    cmd.Parameters.AddWithValue("@QUANTITY", _quantity);
-                    cmd.Parameters.AddWithValue("@DEPARTMENT", _department);
+                    cmd.Parameters.AddWithValue("@ITEM_ID", _item.ITEM_ID);
+                    cmd.Parameters.AddWithValue("@ITEM_NAME", _item.Item_Name);
+                    cmd.Parameters.Add("@PRICE", SqlDbType.Money).Value = _item.Price;
+                    cmd.Parameters.AddWithValue("@QUANTITY", _item.Quantity);
+                    cmd.Parameters.AddWithValue("@DEPARTMENT", _item.Department);
 
                     cmd.ExecuteNonQuery();
                 }

@@ -31,18 +31,16 @@ namespace NutsBoltsAndBeyond
         {
             this.dgvInventory = new System.Windows.Forms.DataGridView();
             this.btnBack = new System.Windows.Forms.Button();
+            this.btnRemove = new System.Windows.Forms.Button();
             this.btnAddItem = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.tbxItem = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.cbxDepartment = new System.Windows.Forms.ComboBox();
-            this.btnRemove = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblViewItem = new System.Windows.Forms.Label();
+            this.lblViewPrice = new System.Windows.Forms.Label();
+            this.lblViewQuantity = new System.Windows.Forms.Label();
+            this.lblViewDpt = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,6 +56,7 @@ namespace NutsBoltsAndBeyond
             this.dgvInventory.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvInventory.Size = new System.Drawing.Size(560, 200);
             this.dgvInventory.TabIndex = 3;
+            this.dgvInventory.SelectionChanged += new System.EventHandler(this.dgvInventory_SelectionChanged);
             // 
             // btnBack
             // 
@@ -69,19 +68,30 @@ namespace NutsBoltsAndBeyond
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // btnRemove
+            // 
+            this.btnRemove.Location = new System.Drawing.Point(472, 253);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(100, 23);
+            this.btnRemove.TabIndex = 14;
+            this.btnRemove.Text = "&REMOVE ITEM";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
             // btnAddItem
             // 
-            this.btnAddItem.Location = new System.Drawing.Point(126, 333);
+            this.btnAddItem.Location = new System.Drawing.Point(472, 224);
             this.btnAddItem.Name = "btnAddItem";
             this.btnAddItem.Size = new System.Drawing.Size(100, 23);
             this.btnAddItem.TabIndex = 5;
             this.btnAddItem.Text = "&ADD ITEM";
             this.btnAddItem.UseVisualStyleBackColor = true;
+            this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(101, 235);
+            this.label1.Location = new System.Drawing.Point(213, 225);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(32, 14);
             this.label1.TabIndex = 6;
@@ -90,7 +100,7 @@ namespace NutsBoltsAndBeyond
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(95, 260);
+            this.label2.Location = new System.Drawing.Point(207, 250);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 14);
             this.label2.TabIndex = 7;
@@ -99,7 +109,7 @@ namespace NutsBoltsAndBeyond
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 287);
+            this.label3.Location = new System.Drawing.Point(124, 277);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(121, 14);
             this.label3.TabIndex = 8;
@@ -108,102 +118,62 @@ namespace NutsBoltsAndBeyond
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(58, 313);
+            this.label4.Location = new System.Drawing.Point(170, 303);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(75, 14);
             this.label4.TabIndex = 9;
             this.label4.Text = "DEPARTMENT:";
             // 
-            // tbxItem
+            // lblViewItem
             // 
-            this.tbxItem.Location = new System.Drawing.Point(139, 229);
-            this.tbxItem.Name = "tbxItem";
-            this.tbxItem.Size = new System.Drawing.Size(165, 20);
-            this.tbxItem.TabIndex = 10;
+            this.lblViewItem.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblViewItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblViewItem.Location = new System.Drawing.Point(251, 225);
+            this.lblViewItem.Name = "lblViewItem";
+            this.lblViewItem.Size = new System.Drawing.Size(140, 20);
+            this.lblViewItem.TabIndex = 15;
+            this.lblViewItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox1
+            // lblViewPrice
             // 
-            this.textBox1.Location = new System.Drawing.Point(139, 254);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(167, 20);
-            this.textBox1.TabIndex = 11;
+            this.lblViewPrice.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblViewPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblViewPrice.Location = new System.Drawing.Point(251, 250);
+            this.lblViewPrice.Name = "lblViewPrice";
+            this.lblViewPrice.Size = new System.Drawing.Size(140, 20);
+            this.lblViewPrice.TabIndex = 16;
+            this.lblViewPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox2
+            // lblViewQuantity
             // 
-            this.textBox2.Location = new System.Drawing.Point(139, 281);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(167, 20);
-            this.textBox2.TabIndex = 12;
+            this.lblViewQuantity.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblViewQuantity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblViewQuantity.Location = new System.Drawing.Point(251, 277);
+            this.lblViewQuantity.Name = "lblViewQuantity";
+            this.lblViewQuantity.Size = new System.Drawing.Size(140, 20);
+            this.lblViewQuantity.TabIndex = 17;
+            this.lblViewQuantity.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // cbxDepartment
+            // lblViewDpt
             // 
-            this.cbxDepartment.FormattingEnabled = true;
-            this.cbxDepartment.Items.AddRange(new object[] {
-            "SAFETY AND SECURITY",
-            "GARAGE DOOR OPENERS AND HARDWARE",
-            "DOOR KNOBS AND LOCKS",
-            "FIRE SAFTEY",
-            "DOOR HARDWARE",
-            "MAILBOXES AND POSTS",
-            "CABINET AND FURNITURE HARDWARE",
-            "SCREWS AND ANCHORS",
-            "WINDOW AND SCREEN HARDWARE",
-            "HANGING AND MOUNTING",
-            "METAL SHEETS AND RODS",
-            "CAIN AND ROPE",
-            "ANGLES, BRACES, AND BRACKETS",
-            "SIGNS, LETTERS AND NUMBERS",
-            "HOOKS AND SCREW EYES",
-            "NUTS AND BOLTS",
-            "NAILS AND SUPPLIES",
-            "SPECIALTY HARDWARE",
-            "KEYS AND ACCESSORIES"});
-            this.cbxDepartment.Location = new System.Drawing.Point(139, 305);
-            this.cbxDepartment.Name = "cbxDepartment";
-            this.cbxDepartment.Size = new System.Drawing.Size(167, 22);
-            this.cbxDepartment.TabIndex = 13;
-            // 
-            // btnRemove
-            // 
-            this.btnRemove.Location = new System.Drawing.Point(472, 218);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(100, 23);
-            this.btnRemove.TabIndex = 14;
-            this.btnRemove.Text = "&REMOVE ITEM";
-            this.btnRemove.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(166, 69);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(258, 18);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "*** DOESN\'T DO ANYTHING YET***";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(28, 121);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(532, 18);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "*** COMBO BOX IS LOADED AND YOU CAN GO BACK, BUT THATS IT***";
+            this.lblViewDpt.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblViewDpt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblViewDpt.Location = new System.Drawing.Point(251, 303);
+            this.lblViewDpt.Name = "lblViewDpt";
+            this.lblViewDpt.Size = new System.Drawing.Size(140, 20);
+            this.lblViewDpt.TabIndex = 18;
+            this.lblViewDpt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // frmInventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 361);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblViewDpt);
+            this.Controls.Add(this.lblViewQuantity);
+            this.Controls.Add(this.lblViewPrice);
+            this.Controls.Add(this.lblViewItem);
             this.Controls.Add(this.btnRemove);
-            this.Controls.Add(this.cbxDepartment);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.tbxItem);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -215,6 +185,7 @@ namespace NutsBoltsAndBeyond
             this.Name = "frmInventory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmInventory";
+            this.Load += new System.EventHandler(this.frmInventory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -225,17 +196,15 @@ namespace NutsBoltsAndBeyond
 
         private System.Windows.Forms.DataGridView dgvInventory;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnAddItem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tbxItem;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox cbxDepartment;
-        private System.Windows.Forms.Button btnRemove;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblViewItem;
+        private System.Windows.Forms.Label lblViewPrice;
+        private System.Windows.Forms.Label lblViewQuantity;
+        private System.Windows.Forms.Label lblViewDpt;
     }
 }
