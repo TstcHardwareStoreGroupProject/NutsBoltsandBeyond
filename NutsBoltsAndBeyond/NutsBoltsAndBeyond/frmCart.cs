@@ -88,7 +88,7 @@ namespace NutsBoltsAndBeyond
 
         private void btnCheckout_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Checkout Successful... I know, we're working on it...", "Success, kinda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Checkout Successful! Here is your receipt!\nThank you for shopping Nust Bolts and Beyond!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             ProgOps.CartTable.Clear();
             frmCart_Load(sender, e);
         }

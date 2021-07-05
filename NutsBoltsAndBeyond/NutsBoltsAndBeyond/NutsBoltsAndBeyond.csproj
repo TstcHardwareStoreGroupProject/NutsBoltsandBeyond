@@ -119,6 +119,7 @@
       <DependentUpon>frmToReset.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\ItemModel.cs" />
+    <Compile Include="Models\TransactionModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="ProgOps.cs" />
     <Compile Include="Program.cs" />

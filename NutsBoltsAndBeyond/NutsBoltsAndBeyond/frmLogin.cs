@@ -26,7 +26,7 @@ namespace NutsBoltsAndBeyond
         {
             this.Hide();
             frmSignup signup = new frmSignup();
-            signup.Closed +=(a, args) => this.Close();
+            signup.Closed += (a, args) => this.Close();
             signup.Show();
         }
 
@@ -109,7 +109,7 @@ namespace NutsBoltsAndBeyond
                     }
                     if (flag == false)
                     {
-                        MessageBox.Show("flag: Please check your information and try again", "Please try again", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Please check your information and try again", "Please try again", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         tbxUsername.Text = String.Empty;
                         tbxPassword.Text = String.Empty;
                     }
